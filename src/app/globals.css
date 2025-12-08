@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary - Brand Gradient */
+    --primary-forest: 26 71 57;
+    --primary-teal: 41 182 161;
+    --primary-emerald: 45 139 112;
+
+    /* Semantic */
+    --background: 250 252 251;
+    --foreground: 15 31 26;
+    --muted: 107 123 117;
+    --border: 212 229 222;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .aurora-bg {
+    @apply relative overflow-hidden;
+  }
+
+  .aurora-bg::before,
+  .aurora-bg::after {
+    content: '';
+    @apply absolute pointer-events-none;
+    border-radius: 50%;
+    filter: blur(80px);
+  }
+
+  .aurora-bg::before {
+    @apply w-[600px] h-[600px] -top-48 -left-48;
+    background: radial-gradient(circle, rgba(45, 139, 112, 0.2) 0%, transparent 70%);
+    animation: aurora-shift 8s ease-in-out infinite;
+  }
+
+  .aurora-bg::after {
+    @apply w-[500px] h-[500px] -bottom-32 -right-32;
+    background: radial-gradient(circle, rgba(41, 182, 161, 0.15) 0%, transparent 70%);
+    animation: aurora-shift 10s ease-in-out infinite reverse;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-brand bg-clip-text text-transparent;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 rounded-full font-display font-semibold text-white bg-gradient-brand transition-all duration-300 hover:shadow-lg hover:shadow-primary-teal/25 hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-4 rounded-full font-display font-semibold text-primary-forest border-2 border-primary-forest/20 transition-all duration-300 hover:border-primary-forest/40 hover:bg-primary-forest/5;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+}
