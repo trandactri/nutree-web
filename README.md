@@ -41,27 +41,39 @@ npm run type-check   # Run TypeScript type checking
 web/
 ├── src/
 │   ├── app/
-│   │   ├── layout.tsx              # Root layout with fonts, metadata
-│   │   ├── page.tsx                # Home page
+│   │   ├── layout.tsx              # Root layout with Header & Footer
+│   │   ├── page.tsx                # Home page with Hero + Aurora background
 │   │   ├── changelog/
-│   │   │   └── page.tsx            # Changelog page
-│   │   └── globals.css             # Global styles, CSS variables
-│   ├── components/                 # Reusable React components (Phase 2+)
+│   │   │   └── page.tsx            # Changelog page (Phase 4)
+│   │   └── globals.css             # Global styles, CSS variables, animations
+│   ├── components/                 # Reusable React components (Phase 2: COMPLETE)
+│   │   ├── ui/
+│   │   │   ├── Button.tsx          # Button component with variants (primary/secondary/ghost)
+│   │   │   └── Logo.tsx            # Logo component with responsive sizes
+│   │   ├── layout/
+│   │   │   ├── Header.tsx          # Navigation header with scroll detection
+│   │   │   ├── Footer.tsx          # Footer with GitHub link and license
+│   │   │   ├── MobileMenu.tsx      # Mobile navigation drawer
+│   │   │   └── AuroraBackground.tsx # Animated mesh gradient background
+│   │   └── sections/
+│   │       └── Hero.tsx            # Hero section with CTAs and trust badges
 │   ├── lib/
-│   │   ├── constants.ts            # Brand constants, site config
-│   │   └── utils.ts                # Utility functions (Phase 2+)
+│   │   ├── cn.ts                   # className utility (clsx + tailwind-merge)
+│   │   ├── constants.ts            # Site config, navigation links, brand constants
+│   │   └── utils.ts                # Utility functions (Phase 3+)
 │   └── types/
 │       └── index.ts                # TypeScript type definitions
 ├── public/
 │   ├── logo.png                    # Brand logo
-│   ├── favicon.ico                 # Browser favicon (Phase 2+)
-│   └── apple-touch-icon.png        # iOS home screen icon (Phase 2+)
+│   ├── favicon.ico                 # Browser favicon
+│   └── apple-touch-icon.png        # iOS home screen icon
 ├── package.json
 ├── tsconfig.json
 ├── tailwind.config.ts
 ├── next.config.js
 ├── postcss.config.js
 ├── .eslintrc.json
+├── ONBOARDING.md                   # Developer onboarding guide
 └── .gitignore
 ```
 
@@ -275,15 +287,45 @@ See the main project [Deployment Guide](../docs/deployment-guide.md) for full Do
 
 ## Phase Plan
 
-This is Phase 1 of a 5-phase rollout:
+This is Phase 2 of a 5-phase rollout:
 
 - **Phase 1** ✅: Next.js setup, design system, configuration (COMPLETE)
-- **Phase 2** 🔄: Hero section, header, footer components
+- **Phase 2** ✅: Hero section, header, footer components (COMPLETE - Dec 8, 2025)
 - **Phase 3** ⏳: Features showcase, screenshots, testimonials
 - **Phase 4** ⏳: GitHub changelog integration, changelog page
 - **Phase 5** ⏳: Performance optimization, SEO, deployment
 
-See [Phase 1 Implementation Plan](../plans/20251208-1432-nutree-landing-page/phase-01-nextjs-setup.md) for details.
+### Phase 2 Implementation Summary (Dec 8, 2025)
+
+**Completed Components** (8 total, ~830 LOC):
+1. **Button.tsx** - Reusable button with 3 variants (primary/secondary/ghost), 3 sizes
+2. **Logo.tsx** - Responsive brand logo component
+3. **Header.tsx** - Sticky navigation with scroll detection, mobile menu toggle
+4. **Footer.tsx** - 3-column layout with GitHub link, open-source badge
+5. **MobileMenu.tsx** - Overlay drawer with Framer Motion animations
+6. **AuroraBackground.tsx** - 3-blob animated mesh gradient (8-12s cycles)
+7. **Hero.tsx** - Full viewport section with dual CTAs, trust badges, scroll indicator
+8. **cn.ts** - className utility combining clsx + tailwind-merge
+
+**Key Design Decisions**:
+- Aurora/mesh gradient aesthetic with 3 animated blobs (GPU-accelerated)
+- Staggered entrance animations (0s, 0.1s, 0.2s, 0.3s delays)
+- Mobile-first responsive (sm, md, lg, xl breakpoints)
+- Tailwind-first styling with custom theme variables
+- Framer Motion for complex animations
+
+**Code Quality**:
+- TypeScript strict mode throughout
+- ESLint passing, no console errors
+- Average file size: 103 LOC
+- No unused variables or dead code
+
+**Accessibility Notes** (Code Review):
+- ✅ aria-label on menu button
+- 🔄 HIGH PRIORITY: Add aria-expanded + aria-controls to menu button (Phase 3)
+- 🔄 HIGH PRIORITY: Make logo link focusable with visible outline (Phase 3)
+
+See [Phase 2 Implementation Plan](../plans/20251208-1432-nutree-landing-page/phase-02-hero-layout.md) for details.
 
 ## Contributing
 
