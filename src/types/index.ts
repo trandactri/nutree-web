@@ -31,3 +31,15 @@ export interface NavLink {
   label: string;
   external?: boolean;
 }
+
+export interface ParsedRelease {
+  id: number;
+  version: string;
+  name: string;
+  body: string;
+  publishedAt: Date;
+  htmlUrl: string;
+  isLatest: boolean;
+  isPrerelease: boolean;
+  downloadUrl?: string;
+}

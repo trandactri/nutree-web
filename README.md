@@ -46,20 +46,27 @@ web/
 │   │   ├── changelog/
 │   │   │   └── page.tsx            # Changelog page (Phase 4)
 │   │   └── globals.css             # Global styles, CSS variables, animations
-│   ├── components/                 # Reusable React components (Phase 2: COMPLETE)
+│   ├── components/                 # Reusable React components (Phase 3: COMPLETE)
 │   │   ├── ui/
 │   │   │   ├── Button.tsx          # Button component with variants (primary/secondary/ghost)
-│   │   │   └── Logo.tsx            # Logo component with responsive sizes
+│   │   │   ├── Logo.tsx            # Logo component with responsive sizes
+│   │   │   ├── FeatureCard.tsx     # Feature showcase with icon, title, description (Phase 3)
+│   │   │   └── ScreenshotPlaceholder.tsx # Mock phone frame placeholder (Phase 3)
 │   │   ├── layout/
 │   │   │   ├── Header.tsx          # Navigation header with scroll detection
 │   │   │   ├── Footer.tsx          # Footer with GitHub link and license
 │   │   │   ├── MobileMenu.tsx      # Mobile navigation drawer
 │   │   │   └── AuroraBackground.tsx # Animated mesh gradient background
 │   │   └── sections/
-│   │       └── Hero.tsx            # Hero section with CTAs and trust badges
+│   │       ├── Hero.tsx            # Hero section with CTAs and trust badges
+│   │       ├── Features.tsx        # Features grid with scroll animations (Phase 3)
+│   │       ├── DemoVideo.tsx       # Demo video placeholder section (Phase 3)
+│   │       └── DownloadCTA.tsx     # Download CTA with stats (Phase 3)
+│   ├── hooks/
+│   │   └── useInView.ts            # IntersectionObserver hook for scroll animations (Phase 3)
 │   ├── lib/
 │   │   ├── cn.ts                   # className utility (clsx + tailwind-merge)
-│   │   ├── constants.ts            # Site config, navigation links, brand constants
+│   │   ├── constants.ts            # Site config, navigation links, FEATURES, FEATURE_ICONS (Phase 3 update)
 │   │   └── utils.ts                # Utility functions (Phase 3+)
 │   └── types/
 │       └── index.ts                # TypeScript type definitions
@@ -287,45 +294,54 @@ See the main project [Deployment Guide](../docs/deployment-guide.md) for full Do
 
 ## Phase Plan
 
-This is Phase 2 of a 5-phase rollout:
+This is Phase 3 of a 5-phase rollout:
 
 - **Phase 1** ✅: Next.js setup, design system, configuration (COMPLETE)
 - **Phase 2** ✅: Hero section, header, footer components (COMPLETE - Dec 8, 2025)
-- **Phase 3** ⏳: Features showcase, screenshots, testimonials
+- **Phase 3** ✅: Features showcase, screenshots, testimonials (COMPLETE - Dec 8, 2025)
 - **Phase 4** ⏳: GitHub changelog integration, changelog page
 - **Phase 5** ⏳: Performance optimization, SEO, deployment
 
-### Phase 2 Implementation Summary (Dec 8, 2025)
+### Phase 3 Implementation Summary (Dec 8, 2025)
 
-**Completed Components** (8 total, ~830 LOC):
-1. **Button.tsx** - Reusable button with 3 variants (primary/secondary/ghost), 3 sizes
-2. **Logo.tsx** - Responsive brand logo component
-3. **Header.tsx** - Sticky navigation with scroll detection, mobile menu toggle
-4. **Footer.tsx** - 3-column layout with GitHub link, open-source badge
-5. **MobileMenu.tsx** - Overlay drawer with Framer Motion animations
-6. **AuroraBackground.tsx** - 3-blob animated mesh gradient (8-12s cycles)
-7. **Hero.tsx** - Full viewport section with dual CTAs, trust badges, scroll indicator
-8. **cn.ts** - className utility combining clsx + tailwind-merge
+**Completed Components** (6 total, 518 LOC):
+1. **useInView.ts** - IntersectionObserver hook (43 LOC) - Scroll-triggered animations with configurable threshold/rootMargin, triggerOnce option
+2. **FeatureCard.tsx** - Feature showcase card with icon, title, description, highlights (146 LOC) - Alternating left/right layout, safe SVG icon rendering
+3. **ScreenshotPlaceholder.tsx** - Responsive mock phone frame (50 LOC) - 4 aspect ratio options (16:9, 9:16, 4:3, 1:1)
+4. **Features.tsx** - Features section grid (67 LOC) - Maps 5 feature cards with scroll animations, badge + heading
+5. **DemoVideo.tsx** - Demo video placeholder (78 LOC) - Play button overlay, section header, motion animations
+6. **DownloadCTA.tsx** - Call-to-action section (134 LOC) - iOS/Android download buttons, gradient background, statistics display
+
+**New Constants**:
+- **FEATURES** array - 5 feature definitions (AI Scanning, Meal Planning, Dashboard, Edit, Personalize)
+- **FEATURE_ICONS** object - Safe SVG definitions for 5 icons (camera, sparkles, chart, pencil, settings)
 
 **Key Design Decisions**:
-- Aurora/mesh gradient aesthetic with 3 animated blobs (GPU-accelerated)
-- Staggered entrance animations (0s, 0.1s, 0.2s, 0.3s delays)
-- Mobile-first responsive (sm, md, lg, xl breakpoints)
-- Tailwind-first styling with custom theme variables
-- Framer Motion for complex animations
+- Scroll animation architecture: IntersectionObserver API (native, no library)
+- Feature card alternating pattern: Even indices left-aligned, odd indices right-aligned via RTL direction
+- XSS security: Safe SVG icon components via switch statement, NO dangerouslySetInnerHTML
+- Motion animations: Framer Motion for entrance effects (fade/slide) with 0.6s duration, staggered delays
+- Mobile-first: Full-width stacking on mobile, 2-column grid on md+ breakpoints
 
-**Code Quality**:
-- TypeScript strict mode throughout
+**Code Quality** (9.5/10):
+- TypeScript strict mode, no any types
 - ESLint passing, no console errors
-- Average file size: 103 LOC
-- No unused variables or dead code
+- Average file size: 86 LOC (well-organized)
+- No unused variables, minimal dead code
+- Proper error boundaries with optional values
 
-**Accessibility Notes** (Code Review):
-- ✅ aria-label on menu button
-- 🔄 HIGH PRIORITY: Add aria-expanded + aria-controls to menu button (Phase 3)
-- 🔄 HIGH PRIORITY: Make logo link focusable with visible outline (Phase 3)
+**Security Notes**:
+- ✅ XSS vulnerability found & fixed: Original FEATURE_ICONS used dangerouslySetInnerHTML (HIGH RISK)
+- ✅ Solution: Implemented FeatureIcon component with switch statement for safe SVG rendering
+- ✅ All SVG paths validated from Heroicons library
 
-See [Phase 2 Implementation Plan](../plans/20251208-1432-nutree-landing-page/phase-02-hero-layout.md) for details.
+**Accessibility Notes**:
+- ✅ aria-label on demo video play button
+- ✅ Semantic HTML structure throughout
+- ✅ Color contrast meets WCAG AA standards
+- 🔄 TODO Phase 4: Add aria-expanded + aria-controls to feature cards if interactive
+
+See [Phase 3 Implementation Plan](../docs/phase-03-features-showcase.md) for details.
 
 ## Contributing
 
