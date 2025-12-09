@@ -1,0 +1,397 @@
+NUTREE AI WEB - COMPONENT ARCHITECTURE TREE
+=============================================
+
+ROOT LAYOUT (RootLayout)
+├── Head
+│   ├── favicon.ico
+│   ├── apple-touch-icon.png
+│   └── theme-color: #1A4739
+├── Header
+│   ├── Logo (size: sm)
+│   ├── Nav Links (Desktop)
+│   │   ├── #features
+│   │   ├── #demo
+│   │   ├── /changelog
+│   │   └── GitHub (external)
+│   ├── Download Button (Desktop)
+│   │   └── Button (variant: primary, size: sm)
+│   ├── Mobile Menu Button
+│   └── MobileMenu (AnimatePresence)
+│       ├── Logo
+│       ├── Nav Links
+│       ├── Download Button
+│       └── Social Links
+├── Main
+│   └── AuroraBackground (intensity: medium)
+│       ├── Hero
+│       │   ├── Logo (Image)
+│       │   ├── Headline (h1 + gradient-text)
+│       │   ├── Subheading (p)
+│       │   ├── CTA Buttons
+│       │   │   ├── Button: Download Free
+│       │   │   └── Button: View on GitHub
+│       │   ├── Trust Badges
+│       │   │   ├── Open Source
+│       │   │   ├── iOS & Android
+│       │   │   └── 7 Languages
+│       │   └── Scroll Indicator
+│       ├── DemoVideo
+│       │   ├── Section Header
+│       │   ├── Play Button
+│       │   └── Video Placeholder
+│       ├── Features
+│       │   ├── Section Header (with badge)
+│       │   └── FeatureSection[] (5 items)
+│       │       ├── FeatureCard (index: 0)
+│       │       │   ├── Feature Icon (SVG)
+│       │       │   ├── Title
+│       │       │   ├── Description
+│       │       │   └── ScreenshotPlaceholder
+│       │       ├── FeatureCard (index: 1)
+│       │       │   └── [Same structure]
+│       │       ├── FeatureCard (index: 2)
+│       │       ├── FeatureCard (index: 3)
+│       │       └── FeatureCard (index: 4)
+│       └── DownloadCTA
+│           ├── Title
+│           ├── CTA Buttons
+│           │   ├── iOS Download
+│           │   └── Android Download
+│           └── Stats Display
+└── Footer
+    ├── Brand Section
+    │   ├── Logo (size: md)
+    │   ├── Description
+    │   └── Open Source Badge
+    ├── Quick Links
+    │   ├── Features Link
+    │   ├── Demo Link
+    │   ├── Changelog Link
+    │   └── GitHub Link
+    ├── Contribute Section
+    │   ├── License Text
+    │   └── GitHub Link
+    └── Bottom Bar
+        ├── Copyright
+        └── License Link
+
+CHANGELOG PAGE (/changelog)
+===========================
+
+Root Layout
+└── AuroraBackground
+    ├── Hero (minimal variant)
+    ├── ReleaseList
+    │   ├── ReleaseCard[] (N items)
+    │   │   ├── Version Badge
+    │   │   ├── Title
+    │   │   ├── Published Date
+    │   │   ├── Release Notes
+    │   │   ├── Download Assets
+    │   │   │   ├── iOS (.ipa)
+    │   │   │   ├── Android (.apk)
+    │   │   │   └── Zip (.zip)
+    │   │   ├── Pre-release Badge (if applicable)
+    │   │   └── Latest Badge (if applicable)
+    │   └── Error Fallback (if API fails)
+    └── Empty State (if no releases)
+
+COMPONENT DEPENDENCY GRAPH
+==========================
+
+Button
+├── Header
+├── Hero
+├── DownloadCTA
+└── [Direct usage]
+
+Logo
+├── Header
+├── Footer
+└── Hero
+
+AuroraBackground
+├── Home Page
+└── [Sections]
+
+FeatureCard
+├── Features
+│   └── FeatureSection
+
+ScreenshotPlaceholder
+└── FeatureCard
+
+ReleaseCard
+└── ReleaseList
+
+ReleaseList
+└── Changelog Page
+
+cn (utility)
+├── Button
+├── Logo
+├── AuroraBackground
+├── FeatureCard
+├── ScreenshotPlaceholder
+└── [All components]
+
+useInView (hook)
+├── Features
+│   └── FeatureSection
+└── [Scroll-triggered sections]
+
+FEATURES & FEATURE_ICONS (constants)
+├── Features (section)
+│   └── FeatureCard
+└── [Direct mapping]
+
+NAV_LINKS (constants)
+├── Header
+└── Footer
+
+SITE_CONFIG (constants)
+├── Hero
+├── Header
+├── Footer
+└── [Direct usage]
+
+GitHub (lib/github.ts)
+└── Changelog Page
+
+ANIMATION PATTERNS
+==================
+
+Framer Motion Used In:
+├── Header (entrance animation)
+├── Hero (staggered entrance)
+├── AuroraBackground (continuous blob movement)
+├── FeatureCard (scroll-triggered)
+├── DemoVideo (entrance)
+├── DownloadCTA (entrance)
+├── MobileMenu (slide in/out)
+└── Scroll Indicator (bounce animation)
+
+IntersectionObserver (useInView) Used In:
+├── Features (section header)
+├── FeatureSection[] (each card)
+└── [Other scroll-triggered sections]
+
+PROPS FLOW
+==========
+
+Header (no props, uses constants)
+├── @NAV_LINKS → rendered as Links
+├── @SITE_CONFIG.github.repo → CTA links
+└── @useLocalState (isScrolled, isMobileMenuOpen)
+
+Hero (no props, uses constants)
+├── @SITE_CONFIG → tagline, repo links
+└── @Framer Motion → animations
+
+Features (no props, uses constants)
+├── @FEATURES → mapped to FeatureCard
+└── @useInView → scroll detection
+
+FeatureCard (props-based)
+├── title: string
+├── description: string
+├── icon: keyof FEATURE_ICONS
+├── screenshotLabel: string
+├── index: number
+└── isInView: boolean → triggers animation
+
+Button (forwardRef, reusable)
+├── variant: 'primary' | 'secondary' | 'ghost'
+├── size: 'sm' | 'md' | 'lg'
+└── className: string (extends via cn utility)
+
+Logo (props-based, reusable)
+├── size: 'sm' | 'md' | 'lg'
+├── className: string
+└── linkHome: boolean (true = Link wrapper, false = Image only)
+
+AuroraBackground (props-based, reusable)
+├── children: ReactNode
+├── className: string
+└── intensity: 'subtle' | 'medium' | 'strong'
+
+ReleaseCard (props-based)
+├── release: ParsedRelease
+├── assets: GitHubAsset[]
+└── index: number
+
+ReleaseList (props-based)
+├── releases: ParsedRelease[]
+└── error?: Error
+
+STYLING STRATEGY
+================
+
+Layer 1: Base (globals.css @layer base)
+├── CSS Variables (--primary-forest, --background, etc.)
+├── html { scroll-behavior: smooth }
+└── body, headings { font families, antialiasing }
+
+Layer 2: Components (globals.css @layer components)
+├── .aurora-bg { animation container }
+├── .gradient-text { brand gradient text }
+├── .btn-primary { primary button styles }
+└── .btn-secondary { secondary button styles }
+
+Layer 3: Utilities (globals.css @layer utilities)
+├── .text-balance { CSS text-wrap }
+├── .animate-delay-100 to 400 { animation delays }
+└── [Custom animation utilities]
+
+Tailwind Config (tailwind.config.ts)
+├── Colors
+│   ├── primary: { forest, teal, emerald }
+│   ├── aurora: { green, teal, mint }
+│   ├── nutrition: { protein, carbs, fat, calories }
+│   └── semantic: { background, foreground, muted, border }
+├── Font Families
+│   ├── display: var(--font-plus-jakarta)
+│   └── body: var(--font-dm-sans)
+├── Gradients
+│   ├── gradient-brand
+│   └── gradient-aurora
+└── Animations
+    ├── aurora-shift (8s)
+    ├── fade-in (0.6s)
+    └── slide-up (0.6s)
+
+RESPONSIVE DESIGN BREAKPOINTS
+=============================
+
+Mobile-First Approach:
+├── Base (0px - all screens)
+│   ├── Single column layouts
+│   ├── Full-width hero
+│   ├── Stacked navigation
+│   └── Touch-friendly buttons
+├── sm (640px)
+│   ├── Larger touch targets
+│   └── Side-by-side CTAs
+├── md (768px)
+│   ├── Desktop navigation appears
+│   ├── 2+ column grids
+│   ├── Larger hero text
+│   └── Desktop logo size
+└── lg (1024px+)
+    ├── Max container widths
+    ├── 3+ column layouts
+    └── Enhanced spacing
+
+FEATURE FLAGS & PHASES
+======================
+
+Phase 1 ✓ (Foundation)
+├── Next.js 14 setup
+├── Tailwind configuration
+├── TypeScript strict mode
+└── Font optimization
+
+Phase 2 ✓ (Layout)
+├── Header component
+├── Footer component
+├── Hero section
+├── AuroraBackground
+└── Root layout
+
+Phase 3 ✓ (Content)
+├── useInView hook
+├── FeatureCard component
+├── ScreenshotPlaceholder
+├── Features section
+├── DemoVideo section
+├── DownloadCTA section
+└── FEATURES & FEATURE_ICONS
+
+Phase 4 ✓ (GitHub Integration)
+├── github.ts (Octokit client)
+├── ReleaseCard component
+├── ReleaseList component
+├── Changelog page
+├── ISR revalidation (3600s)
+└── Security: XSS fix
+
+Phase 5 ⏳ (Performance & Deploy)
+├── Lighthouse optimization
+├── Core Web Vitals audit
+├── Bundle size reduction
+├── Docker containerization
+└── Production deployment
+
+BUNDLE IMPACT ESTIMATE
+======================
+
+Code:
+├── Components: ~1,200 LOC (14 files)
+├── Hooks & Utils: ~300 LOC (4 files)
+├── Configuration: ~100 LOC
+└── Total: ~1,600 LOC
+
+Dependencies (estimated bundle impact):
+├── Next.js 14: ~500 kB (with optimizations)
+├── React 18: ~200 kB
+├── Tailwind CSS: ~50 kB (purged)
+├── Framer Motion: ~40 kB
+├── Octokit: ~96 kB (Phase 4 addition)
+├── clsx + tailwind-merge: ~10 kB
+└── Total: ~900 kB (gzipped: ~300 kB)
+
+Code splitting:
+├── Home page bundle: ~200 kB
+├── Changelog page bundle: ~250 kB
+└── Shared chunks: ~150 kB
+
+IMAGE ASSETS
+============
+
+Public Assets:
+├── logo.png (brand logo, used in Hero & Header)
+├── favicon.ico (browser tab icon)
+└── apple-touch-icon.png (iOS home screen)
+
+External Images:
+├── GitHub avatar (Octokit API response)
+└── [Future app screenshots]
+
+API INTEGRATIONS
+================
+
+GitHub API (Phase 4):
+├── Endpoint: GET /repos/trandactri/nutree-web/releases
+├── Library: Octokit REST v21
+├── Cache Strategy: ISR revalidation (3600s)
+├── Error Handling: Fallback UI component
+├── Rate Limit: 60 requests/hour (unauthenticated)
+└── Security: No sensitive tokens in frontend
+
+TYPE SAFETY
+===========
+
+All Components:
+├── Props interfaces defined
+├── React.FC<Props> pattern
+└── Strict TypeScript checking
+
+Constants:
+├── as const assertions (NAV_LINKS, FEATURES)
+└── Type inference for safety
+
+Hooks:
+├── UseInViewOptions interface
+└── ReturnType { ref, isInView }
+
+API Types:
+├── GitHubRelease interface
+├── GitHubAsset interface
+└── ParsedRelease interface
+
+---
+Generated: December 9, 2025
+Component Count: 14 total
+Hooks: 1 custom (useInView)
+Library Files: 3 (cn, constants, github)
+Pages: 2 (/,  /changelog)
