@@ -44,7 +44,7 @@ export function Footer() {
               Have questions or feedback? We&apos;d love to hear from you.
             </p>
             <Link
-              href={`mailto:support@${SITE_CONFIG.url.replace('https://', '')}`}
+              href={`mailto:${SITE_CONFIG.supportEmail}`}
               className="inline-flex items-center gap-2 text-sm font-medium text-primary-forest transition-colors hover:text-primary-teal"
             >
               Contact Support
@@ -70,8 +70,8 @@ export function Footer() {
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border/50 pt-8 text-sm text-muted md:flex-row">
           <p>&copy; {currentYear} Nutree AI. All rights reserved.</p>
           <div className="flex items-center gap-4">
-            <Link href="#" className="hover:text-foreground">Privacy Policy</Link>
-            <Link href="#" className="hover:text-foreground">Terms of Service</Link>
+            <Link href="/privacy" className="hover:text-foreground">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-foreground">Terms of Service</Link>
           </div>
         </div>
       </div>
