@@ -36,7 +36,7 @@ export function ScreenshotPlaceholder({
           <div className="flex h-full flex-col items-center justify-center p-8 text-center">
             {/* Gradient Text Logo */}
             <span className="mb-4 font-display text-xl font-bold bg-gradient-to-r from-primary-forest via-primary-emerald to-primary-teal bg-clip-text text-transparent opacity-60">
-              NutreeAI
+              Nutree AI
             </span>
             <span className="text-sm font-medium text-muted">{label}</span>
             <span className="mt-1 text-xs text-muted/60">Screenshot Placeholder</span>

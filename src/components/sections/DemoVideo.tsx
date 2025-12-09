@@ -63,7 +63,7 @@ export function DemoVideo() {
             {/* Placeholder content */}
             <div className="flex h-full flex-col items-center justify-end p-8 text-center">
               <span className="mb-2 font-display text-lg font-semibold bg-gradient-to-r from-primary-forest via-primary-emerald to-primary-teal bg-clip-text text-transparent">
-                NutreeAI
+                Nutree AI
               </span>
               <span className="text-sm font-medium text-muted">Demo Video</span>
               <span className="text-xs text-muted/60">Coming Soon</span>

@@ -30,11 +30,9 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="max-w-4xl font-display text-4xl font-bold leading-tight text-foreground md:text-6xl lg:text-7xl"
+            className="font-display text-2xl font-bold leading-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl whitespace-nowrap text-center"
           >
-            Your{' '}
-            <span className="gradient-text">AI Nutritionist</span>{' '}
-            in Your Pocket
+            Your <span className="gradient-text">AI Nutritionist</span> in Your Pocket
           </motion.h1>
 
           {/* Subheadline */}
