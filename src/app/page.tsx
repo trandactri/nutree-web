@@ -1,16 +1,20 @@
 import { AuroraBackground } from '@/components/layout/AuroraBackground';
-import { Hero } from '@/components/sections/Hero';
-import { DemoVideo } from '@/components/sections/DemoVideo';
-import { FeaturesSlider } from '@/components/sections/FeaturesSlider';
-import { DownloadCTA } from '@/components/sections/DownloadCTA';
+import { HeroV2 } from '@/components/sections/HeroV2';
+import { SocialProof } from '@/components/sections/SocialProof';
+import { HowItWorks } from '@/components/sections/HowItWorks';
+import { BentoFeatures } from '@/components/sections/BentoFeatures';
+import { Testimonials } from '@/components/sections/Testimonials';
+import { FinalCTA } from '@/components/sections/FinalCTA';
 
 export default function Home() {
   return (
-    <AuroraBackground className="min-h-screen">
-      <Hero />
-      <DemoVideo />
-      <FeaturesSlider />
-      <DownloadCTA />
+    <AuroraBackground className="min-h-screen" intensity="subtle">
+      <HeroV2 />
+      <SocialProof />
+      <HowItWorks />
+      <BentoFeatures />
+      <Testimonials />
+      <FinalCTA />
     </AuroraBackground>
   );
 }
