@@ -352,6 +352,16 @@ See [Phase 3 Implementation Plan](../docs/phase-03-features-showcase.md) for det
 5. Commit: `git commit -m "feat(scope): description"`
 6. Push to remote and create PR
 
+## Documentation
+
+Comprehensive project documentation is available in the `/docs` directory:
+
+- **[Project Overview & PDR](./docs/project-overview-pdr.md)** - Product goals, requirements, timeline, and success metrics
+- **[Codebase Summary](./docs/codebase-summary.md)** - Architecture overview, component inventory, design system, patterns
+- **[Code Standards](./docs/code-standards.md)** - TypeScript, component patterns, styling, naming conventions, best practices
+- **[System Architecture](./docs/system-architecture.md)** - Tech stack, deployment, performance optimization, scalability
+- **[Phase 3 Implementation](./docs/phase-03-features-showcase.md)** - Scroll animations, XSS security fix, detailed component breakdown
+
 ## Resources
 
 - [Next.js Documentation](https://nextjs.org/docs)
