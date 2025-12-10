@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from '@/hooks/useInView';
+import { Logo } from '@/components/ui/Logo';
 
 export function DemoVideo() {
   const { ref, isInView } = useInView({ threshold: 0.2 });
@@ -62,9 +63,7 @@ export function DemoVideo() {
 
             {/* Placeholder content */}
             <div className="flex h-full flex-col items-center justify-end p-8 text-center">
-              <span className="mb-2 font-display text-lg font-semibold bg-gradient-to-r from-primary-forest via-primary-emerald to-primary-teal bg-clip-text text-transparent">
-                Nutree AI
-              </span>
+              <Logo size="sm" linkHome={false} className="mb-2" />
               <span className="text-sm font-medium text-muted">Demo Video</span>
               <span className="text-xs text-muted/60">Coming Soon</span>
             </div>

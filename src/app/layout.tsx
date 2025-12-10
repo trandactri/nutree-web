@@ -23,6 +23,13 @@ export const metadata: Metadata = {
   description: 'AI-powered nutrition tracking with instant meal scanning, personalized meal planning, and real-time macro tracking. Open source, free to use.',
   keywords: ['nutrition tracking', 'AI meal scanner', 'calorie counter', 'macro tracking', 'meal planning', 'open source'],
   authors: [{ name: 'Nutree Team' }],
+  icons: {
+    icon: [
+      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-64.png', sizes: '64x64', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     title: 'Nutree AI - Your AI Nutritionist in Your Pocket',
     description: 'AI-powered nutrition tracking with instant meal scanning, personalized meal planning, and real-time macro tracking.',
@@ -30,11 +37,20 @@ export const metadata: Metadata = {
     siteName: 'Nutree AI',
     type: 'website',
     locale: 'en_US',
+    images: [
+      {
+        url: '/logo-512.png',
+        width: 512,
+        height: 512,
+        alt: 'Nutree AI Logo',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Nutree AI - Your AI Nutritionist in Your Pocket',
     description: 'AI-powered nutrition tracking with instant meal scanning and personalized meal planning.',
+    images: ['/logo-512.png'],
   },
   robots: {
     index: true,
@@ -50,8 +66,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${plusJakarta.variable} ${dmSans.variable}`}>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#1A4739" />
       </head>
       <body className="flex min-h-screen flex-col">

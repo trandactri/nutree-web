@@ -1,4 +1,5 @@
 import { cn } from '@/lib/cn';
+import { Logo } from '@/components/ui/Logo';
 
 interface ScreenshotPlaceholderProps {
   aspectRatio?: '16:9' | '9:16' | '4:3' | '1:1';
@@ -34,10 +35,7 @@ export function ScreenshotPlaceholder({
 
           {/* Screen content placeholder */}
           <div className="flex h-full flex-col items-center justify-center p-8 text-center">
-            {/* Gradient Text Logo */}
-            <span className="mb-4 font-display text-xl font-bold bg-gradient-to-r from-primary-forest via-primary-emerald to-primary-teal bg-clip-text text-transparent opacity-60">
-              Nutree AI
-            </span>
+            <Logo size="sm" linkHome={false} className="mb-4 opacity-60" />
             <span className="text-sm font-medium text-muted">{label}</span>
             <span className="mt-1 text-xs text-muted/60">Screenshot Placeholder</span>
           </div>
