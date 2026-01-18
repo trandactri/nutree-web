@@ -10,7 +10,7 @@ const FEATURES_DATA = [
   {
     id: 'ai-scanning',
     title: 'Track Your Food With Just a Picture',
-    description: 'Snap a photo with Nutree AI, and our AI instantly analyzes your meal to determine calories, protein, carbs, and fat. No manual entry needed.',
+    description: 'Snap a photo with Nutree, and our AI instantly analyzes your meal to determine calories, protein, carbs, and fat. No manual entry needed.',
     screen: 'scanning' as const,
   },
   {
@@ -57,7 +57,7 @@ export function FeaturesSlider() {
             Features
           </span>
           <h2 className="font-display text-2xl font-bold text-foreground md:text-4xl lg:text-5xl whitespace-nowrap">
-            What does <span className="gradient-text">Nutree AI</span> include?
+            What does <span className="gradient-text">Nutree</span> include?
           </h2>
           <p className="mt-4 text-lg text-muted">
             Powerful AI features that make nutrition tracking effortless and insightful.

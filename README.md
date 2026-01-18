@@ -1,6 +1,6 @@
-# Nutree AI Landing Page
+# Nutree Landing Page
 
-Next.js 14 landing page for Nutree AI - AI-powered nutrition tracking platform.
+Next.js 14 landing page for Nutree - AI-powered nutrition tracking platform.
 
 **Live Demo**: Coming soon
 **Source**: [trandactri/nutree-web](https://github.com/trandactri/nutree-web)

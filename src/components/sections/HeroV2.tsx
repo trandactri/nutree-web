@@ -172,7 +172,7 @@ export function HeroV2() {
                       />
                     </svg>
                   </div>
-                  <span className="font-display font-bold text-lg gradient-text">Nutree AI</span>
+                  <span className="font-display font-bold text-lg gradient-text">Nutree</span>
                   <span className="text-xs text-muted mt-1">Scan to track</span>
                 </div>
               </PhoneMockup>

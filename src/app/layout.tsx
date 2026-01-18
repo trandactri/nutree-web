@@ -19,7 +19,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Nutree AI - Your AI Nutritionist in Your Pocket',
+  title: 'Nutree - Your AI Nutritionist in Your Pocket',
   description: 'AI-powered nutrition tracking with instant meal scanning, personalized meal planning, and real-time macro tracking. Open source, free to use.',
   keywords: ['nutrition tracking', 'AI meal scanner', 'calorie counter', 'macro tracking', 'meal planning', 'open source'],
   authors: [{ name: 'Nutree Team' }],
@@ -31,10 +31,10 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   openGraph: {
-    title: 'Nutree AI - Your AI Nutritionist in Your Pocket',
+    title: 'Nutree - Your AI Nutritionist in Your Pocket',
     description: 'AI-powered nutrition tracking with instant meal scanning, personalized meal planning, and real-time macro tracking.',
     url: 'https://nutreeai.com',
-    siteName: 'Nutree AI',
+    siteName: 'Nutree',
     type: 'website',
     locale: 'en_US',
     images: [
@@ -42,13 +42,13 @@ export const metadata: Metadata = {
         url: '/logo-512.png',
         width: 512,
         height: 512,
-        alt: 'Nutree AI Logo',
+        alt: 'Nutree Logo',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nutree AI - Your AI Nutritionist in Your Pocket',
+    title: 'Nutree - Your AI Nutritionist in Your Pocket',
     description: 'AI-powered nutrition tracking with instant meal scanning and personalized meal planning.',
     images: ['/logo-512.png'],
   },

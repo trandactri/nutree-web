@@ -1,4 +1,4 @@
-# System Architecture - Nutree AI Web
+# System Architecture - Nutree Web
 
 **Last Updated**: December 10, 2025
 **Version**: Phase 3 (Stable)
@@ -8,11 +8,11 @@
 
 ## Architecture Overview
 
-Nutree AI Web is a static/SSR Next.js 14 application optimized for performance, accessibility, and developer experience. The architecture follows modern web standards with clear separation of concerns.
+Nutree Web is a static/SSR Next.js 14 application optimized for performance, accessibility, and developer experience. The architecture follows modern web standards with clear separation of concerns.
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│         Nutree AI Web Architecture                       │
+│         Nutree Web Architecture                       │
 ├─────────────────────────────────────────────────────────┤
 │                                                           │
 │  ┌──────────────────────────────────────────────────┐  │

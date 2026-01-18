@@ -29,13 +29,13 @@ export function Logo({ size = 'md', className, linkHome = true }: LogoProps) {
         'inline-flex items-center gap-2',
         className
       )}
-      aria-label="Nutree AI"
+      aria-label="Nutree"
     >
       <picture>
         <source srcSet="/logo-gradient-200.webp" type="image/webp" />
         <Image
           src="/logo-gradient-200.png"
-          alt="Nutree AI Icon"
+          alt="Nutree Icon"
           width={iconSize}
           height={iconSize}
           className="object-contain rounded-lg"
@@ -48,7 +48,7 @@ export function Logo({ size = 'md', className, linkHome = true }: LogoProps) {
           sizeClasses[size]
         )}
       >
-        Nutree AI
+        Nutree
       </span>
     </span>
   );

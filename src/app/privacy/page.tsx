@@ -3,11 +3,11 @@ import Link from 'next/link';
 import { SITE_CONFIG } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Nutree AI',
-  description: 'Privacy Policy for Nutree AI - Learn how we collect, use, and protect your data.',
+  title: 'Privacy Policy | Nutree',
+  description: 'Privacy Policy for Nutree - Learn how we collect, use, and protect your data.',
   openGraph: {
-    title: 'Privacy Policy | Nutree AI',
-    description: 'Privacy Policy for Nutree AI',
+    title: 'Privacy Policy | Nutree',
+    description: 'Privacy Policy for Nutree',
     type: 'website',
   },
 };
@@ -51,7 +51,7 @@ export default function PrivacyPolicy() {
               <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground">
                 Privacy Policy
               </h1>
-              <p className="text-muted">Nutree AI Application</p>
+              <p className="text-muted">Nutree Application</p>
             </div>
           </div>
           <div className="flex flex-wrap gap-4 text-sm text-muted">
@@ -121,7 +121,7 @@ export default function PrivacyPolicy() {
             </h2>
             <div className="pl-11 space-y-3">
               <p>
-                This Privacy Policy describes how Nutree AI (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) collects, uses,
+                This Privacy Policy describes how Nutree (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) collects, uses,
                 discloses, and protects your personal information when you use our mobile application
                 and related services (collectively, the &quot;Services&quot;).
               </p>
@@ -228,7 +228,7 @@ export default function PrivacyPolicy() {
             </h2>
             <div className="pl-11 space-y-4">
               <p>
-                We use trusted third-party services to operate Nutree AI. Each service processes only
+                We use trusted third-party services to operate Nutree. Each service processes only
                 the minimum data necessary for its function.
               </p>
               <div className="overflow-x-auto">
@@ -438,7 +438,7 @@ export default function PrivacyPolicy() {
               <div>
                 <h3 className="font-semibold text-foreground mb-2">9.1 Age Requirement</h3>
                 <p>
-                  Nutree AI is intended for users aged 13 and older. We do not knowingly collect
+                  Nutree is intended for users aged 13 and older. We do not knowingly collect
                   personal information from children under 13 years of age.
                 </p>
               </div>
@@ -472,7 +472,7 @@ export default function PrivacyPolicy() {
               <div>
                 <h3 className="font-semibold text-foreground mb-2">10.1 Data Processing Location</h3>
                 <p>
-                  Nutree AI is operated from the United States. If you access our Services from outside
+                  Nutree is operated from the United States. If you access our Services from outside
                   the US, please be aware that your data may be transferred to, stored, and processed
                   in the United States where our servers are located.
                 </p>
@@ -545,7 +545,7 @@ export default function PrivacyPolicy() {
                 your personal data, please contact us:
               </p>
               <div className="p-6 rounded-lg bg-white border border-border/50">
-                <p className="font-semibold text-foreground mb-3">Nutree AI Privacy Support</p>
+                <p className="font-semibold text-foreground mb-3">Nutree Privacy Support</p>
                 <div className="space-y-2">
                   <p>
                     <strong>Email:</strong>{' '}
@@ -568,7 +568,7 @@ export default function PrivacyPolicy() {
 
         {/* Footer */}
         <footer className="mt-16 pt-8 border-t border-border/50 text-center text-sm text-muted">
-          <p>&copy; {new Date().getFullYear()} Nutree AI. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Nutree. All rights reserved.</p>
           <p className="mt-2">
             <Link href="/terms" className="text-primary-forest hover:text-primary-teal">Terms of Service</Link>
             <span className="mx-2">|</span>

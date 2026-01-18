@@ -19,9 +19,9 @@ export function Hero() {
           >
             <span
               className="font-display text-6xl font-bold md:text-7xl lg:text-8xl bg-gradient-to-r from-primary-forest via-primary-emerald to-primary-teal bg-clip-text text-transparent"
-              aria-label="Nutree AI"
+              aria-label="Nutree"
             >
-              Nutree AI
+              Nutree
             </span>
           </motion.div>
 

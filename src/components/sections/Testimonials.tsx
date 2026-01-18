@@ -18,7 +18,7 @@ interface Testimonial {
 const TESTIMONIALS: Testimonial[] = [
   {
     id: '1',
-    quote: 'Nutree AI completely changed how I track my food. The AI is incredibly accurate and saves me so much time every day. I finally hit my protein goals consistently!',
+    quote: 'Nutree completely changed how I track my food. The AI is incredibly accurate and saves me so much time every day. I finally hit my protein goals consistently!',
     author: 'Sarah M.',
     role: 'Fitness Enthusiast',
     achievement: 'Lost 15 lbs in 3 months',
@@ -36,7 +36,7 @@ const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: '3',
-    quote: 'I have tried every nutrition app out there. Nutree AI is by far the most accurate and easiest to use. The Vietnamese language support is perfect for my family.',
+    quote: 'I have tried every nutrition app out there. Nutree is by far the most accurate and easiest to use. The Vietnamese language support is perfect for my family.',
     author: 'Linh T.',
     role: 'Working Mom',
     achievement: 'Whole family tracking',

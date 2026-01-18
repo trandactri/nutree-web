@@ -3,11 +3,11 @@ import Link from 'next/link';
 import { SITE_CONFIG } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | Nutree AI',
-  description: 'Terms of Service for Nutree AI - Read our terms and conditions for using the app.',
+  title: 'Terms of Service | Nutree',
+  description: 'Terms of Service for Nutree - Read our terms and conditions for using the app.',
   openGraph: {
-    title: 'Terms of Service | Nutree AI',
-    description: 'Terms of Service for Nutree AI',
+    title: 'Terms of Service | Nutree',
+    description: 'Terms of Service for Nutree',
     type: 'website',
   },
 };
@@ -51,7 +51,7 @@ export default function TermsOfService() {
               <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground">
                 Terms of Service
               </h1>
-              <p className="text-muted">Nutree AI Application</p>
+              <p className="text-muted">Nutree Application</p>
             </div>
           </div>
           <div className="flex flex-wrap gap-4 text-sm text-muted">
@@ -92,8 +92,8 @@ export default function TermsOfService() {
             </h2>
             <div className="pl-11 space-y-3">
               <p>
-                By accessing or using Nutree AI (&quot;the App&quot;), you agree to be bound by these Terms of Service
-                (&quot;Terms&quot;). These Terms constitute a legally binding agreement between you and Nutree AI.
+                By accessing or using Nutree (&quot;the App&quot;), you agree to be bound by these Terms of Service
+                (&quot;Terms&quot;). These Terms constitute a legally binding agreement between you and Nutree.
               </p>
               <p>
                 If you do not agree to these Terms, you must not access or use the App. Your continued use of
@@ -112,7 +112,7 @@ export default function TermsOfService() {
               <div>
                 <h3 className="font-semibold text-foreground mb-2">2.1 Age Requirement</h3>
                 <p>
-                  You must be at least 13 years old to use Nutree AI. By using the App, you represent and
+                  You must be at least 13 years old to use Nutree. By using the App, you represent and
                   warrant that you meet this age requirement.
                 </p>
               </div>
@@ -142,7 +142,7 @@ export default function TermsOfService() {
             <div className="pl-11 space-y-4">
               <div>
                 <h3 className="font-semibold text-foreground mb-2">3.1 Registration Methods</h3>
-                <p>To use Nutree AI, you may create an account using:</p>
+                <p>To use Nutree, you may create an account using:</p>
                 <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
                   <li>Email and password</li>
                   <li>Google Sign-In</li>
@@ -215,7 +215,7 @@ export default function TermsOfService() {
               <div>
                 <h3 className="font-semibold text-foreground mb-2">5.1 Premium Features</h3>
                 <p>
-                  Nutree AI offers premium features through in-app subscriptions processed by RevenueCat
+                  Nutree offers premium features through in-app subscriptions processed by RevenueCat
                   via Apple App Store or Google Play Store.
                 </p>
               </div>
@@ -260,7 +260,7 @@ export default function TermsOfService() {
               <div>
                 <h3 className="font-semibold text-foreground mb-2">6.1 License Grant</h3>
                 <p>
-                  When you upload meal photos or other content to Nutree AI, you grant us a non-exclusive,
+                  When you upload meal photos or other content to Nutree, you grant us a non-exclusive,
                   worldwide, royalty-free license to store, process, and analyze that content solely to
                   provide our services to you.
                 </p>
@@ -345,7 +345,7 @@ export default function TermsOfService() {
             <div className="pl-11 space-y-4">
               <div className="p-4 rounded-lg bg-amber-50 border border-amber-200">
                 <p className="font-semibold text-amber-800">
-                  IMPORTANT: Nutree AI is not a medical service and does not provide medical advice.
+                  IMPORTANT: Nutree is not a medical service and does not provide medical advice.
                 </p>
               </div>
               <div>
@@ -390,8 +390,8 @@ export default function TermsOfService() {
               <div>
                 <h3 className="font-semibold text-foreground mb-2">10.1 Ownership</h3>
                 <p>
-                  All content, features, functionality, trademarks, and intellectual property of Nutree AI
-                  (excluding user-generated content) are owned by Nutree AI and protected by copyright,
+                  All content, features, functionality, trademarks, and intellectual property of Nutree
+                  (excluding user-generated content) are owned by Nutree and protected by copyright,
                   trademark, and other intellectual property laws.
                 </p>
               </div>
@@ -432,7 +432,7 @@ export default function TermsOfService() {
               <div>
                 <h3 className="font-semibold text-foreground mb-2">11.3 Limitation of Liability</h3>
                 <p>
-                  To the maximum extent permitted by law, Nutree AI shall not be liable for any indirect,
+                  To the maximum extent permitted by law, Nutree shall not be liable for any indirect,
                   incidental, special, consequential, or punitive damages arising from your use of or
                   inability to use the App.
                 </p>

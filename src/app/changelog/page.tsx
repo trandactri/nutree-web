@@ -6,11 +6,11 @@ import { getGitHubReleases } from '@/lib/github';
 export const revalidate = 3600; // ISR: revalidate every 1 hour
 
 export const metadata: Metadata = {
-  title: 'Changelog | Nutree AI',
-  description: 'Release notes and changelog for Nutree AI - Track features, improvements, and bug fixes.',
+  title: 'Changelog | Nutree',
+  description: 'Release notes and changelog for Nutree - Track features, improvements, and bug fixes.',
   openGraph: {
-    title: 'Changelog | Nutree AI',
-    description: 'Release notes and changelog for Nutree AI',
+    title: 'Changelog | Nutree',
+    description: 'Release notes and changelog for Nutree',
     type: 'website',
   },
 };
@@ -50,7 +50,7 @@ export default async function Changelog() {
             Changelog
           </h1>
           <p className="mt-4 text-xl text-muted">
-            Follow the latest updates, features, and improvements to Nutree AI.
+            Follow the latest updates, features, and improvements to Nutree.
           </p>
         </div>
 

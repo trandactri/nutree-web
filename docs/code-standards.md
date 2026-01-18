@@ -1,4 +1,4 @@
-# Code Standards - Nutree AI Web
+# Code Standards - Nutree Web
 
 **Last Updated**: December 10, 2025
 **Applies To**: All TypeScript/React code in `/src` directory

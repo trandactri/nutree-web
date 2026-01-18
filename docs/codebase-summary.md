@@ -1,4 +1,4 @@
-# Nutree AI Web - Codebase Summary
+# Nutree Web - Codebase Summary
 
 **Last Updated**: December 10, 2025
 **Phase**: 3 of 5 (Features Showcase - COMPLETE)
@@ -9,7 +9,7 @@
 
 ## Overview
 
-Nutree AI Web is a Next.js 14 landing page for an open-source AI-powered nutrition tracking platform. It showcases core features through scroll-triggered animations, includes full legal compliance pages, and integrates GitHub releases for real-time changelog updates.
+Nutree Web is a Next.js 14 landing page for an open-source AI-powered nutrition tracking platform. It showcases core features through scroll-triggered animations, includes full legal compliance pages, and integrates GitHub releases for real-time changelog updates.
 
 **Key Stats**:
 - **Total Components**: 20+ (layout, sections, ui, hooks)

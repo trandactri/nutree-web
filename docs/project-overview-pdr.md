@@ -1,7 +1,7 @@
-# Nutree AI - Project Overview & Product Development Requirements (PDR)
+# Nutree - Project Overview & Product Development Requirements (PDR)
 
 **Last Updated**: December 10, 2025
-**Project**: Nutree AI Web Landing Page
+**Project**: Nutree Web Landing Page
 **Phase**: 3 of 5 (Features Showcase - Complete)
 **Status**: Active Development
 
@@ -9,9 +9,9 @@
 
 ## Executive Summary
 
-Nutree AI is an open-source, AI-powered nutrition tracking platform that uses computer vision (Google Gemini AI) to instantly analyze meals for nutritional content. This document defines the Next.js 14 landing page/website serving as the primary user acquisition and onboarding channel for the Nutree ecosystem.
+Nutree is an open-source, AI-powered nutrition tracking platform that uses computer vision (Google Gemini AI) to instantly analyze meals for nutritional content. This document defines the Next.js 14 landing page/website serving as the primary user acquisition and onboarding channel for the Nutree ecosystem.
 
-**Mission**: Build a delightful, high-performance web presence that educates users about Nutree AI capabilities while driving adoption of the mobile app.
+**Mission**: Build a delightful, high-performance web presence that educates users about Nutree capabilities while driving adoption of the mobile app.
 
 ---
 
