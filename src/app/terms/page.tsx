@@ -144,7 +144,6 @@ export default function TermsOfService() {
                 <h3 className="font-semibold text-foreground mb-2">3.1 Registration Methods</h3>
                 <p>To use Nutree, you may create an account using:</p>
                 <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
-                  <li>Email and password</li>
                   <li>Google Sign-In</li>
                   <li>Apple Sign-In</li>
                 </ul>
