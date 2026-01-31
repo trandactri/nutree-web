@@ -213,9 +213,9 @@ export default function TermsOfService() {
             </h2>
             <div className="pl-11 space-y-4">
               <div>
-                <h3 className="font-semibold text-foreground mb-2">5.1 Premium Features</h3>
+                <h3 className="font-semibold text-foreground mb-2">5.1 Standard Features</h3>
                 <p>
-                  Nutree offers premium features through in-app subscriptions processed by RevenueCat
+                  Nutree offers standard features through in-app subscriptions processed by RevenueCat
                   via Apple App Store or Google Play Store.
                 </p>
               </div>
@@ -230,7 +230,7 @@ export default function TermsOfService() {
                 <h3 className="font-semibold text-foreground mb-2">5.3 Cancellation</h3>
                 <p>
                   You can manage and cancel subscriptions through your device&apos;s app store settings.
-                  Access to premium features continues until the end of the current billing period.
+                  Access to standard features continues until the end of the current billing period.
                 </p>
               </div>
               <div>

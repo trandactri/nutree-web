@@ -86,7 +86,7 @@ export function DownloadCTA() {
               Start Your Free Trial Today
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-lg text-white/80">
-              Download Nutree and get {SITE_CONFIG.trial.days} days free access to all premium features.
+              Download Nutree and get {SITE_CONFIG.trial.days} days free access to all standard features.
               <br className="hidden sm:block" />
               No credit card required.
             </p>

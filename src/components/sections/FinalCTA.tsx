@@ -114,7 +114,7 @@ export function FinalCTA() {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="text-lg text-white/80 max-w-lg mx-auto lg:mx-0 mb-8"
               >
-                Download Nutree and get {SITE_CONFIG.trial.days} days free access to all premium features. No credit card required.
+                Download Nutree and get {SITE_CONFIG.trial.days} days free access to all standard features. No credit card required.
               </motion.p>
 
               {/* CTA Buttons with Confetti */}
