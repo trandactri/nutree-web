@@ -55,9 +55,9 @@ export default function PrivacyPolicy() {
             </div>
           </div>
           <div className="flex flex-wrap gap-4 text-sm text-muted">
-            <span><strong>Effective Date:</strong> December 9, 2024</span>
-            <span><strong>Last Updated:</strong> December 9, 2024</span>
-            <span><strong>Version:</strong> 1.0</span>
+            <span><strong>Effective Date:</strong> February 1, 2026</span>
+            <span><strong>Last Updated:</strong> February 1, 2026</span>
+            <span><strong>Version:</strong> 2.0</span>
           </div>
         </header>
 
@@ -121,7 +121,7 @@ export default function PrivacyPolicy() {
             </h2>
             <div className="pl-11 space-y-3">
               <p>
-                This Privacy Policy describes how Nutree (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) collects, uses,
+                This Privacy Policy describes how NUTREE AI VIETNAM JOINT STOCK COMPANY (&quot;Nutree&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) collects, uses,
                 discloses, and protects your personal information when you use our mobile application
                 and related services (collectively, the &quot;Services&quot;).
               </p>
@@ -156,7 +156,7 @@ export default function PrivacyPolicy() {
                   <li><strong>Meal Photos:</strong> Images you upload for nutritional analysis</li>
                   <li><strong>Food Logs:</strong> Meals, ingredients, portions, and timestamps</li>
                   <li><strong>Nutrition History:</strong> Calorie, macronutrient, and micronutrient data over time</li>
-                  <li><strong>Progress Data:</strong> Weight changes, goal progress, and meal plans</li>
+                  <li><strong>Progress Data:</strong> Weight changes, goal progress, and meal suggestion history</li>
                 </ul>
               </div>
               <div>
@@ -184,7 +184,7 @@ export default function PrivacyPolicy() {
                 <ul className="list-disc list-inside space-y-1 ml-4">
                   <li>Analyze meal photos and provide nutritional information</li>
                   <li>Calculate and track your daily nutrition intake</li>
-                  <li>Generate personalized meal plans and recommendations</li>
+                  <li>Generate personalized meal suggestions and recommendations</li>
                   <li>Display progress analytics and insights</li>
                 </ul>
               </div>
@@ -276,6 +276,11 @@ export default function PrivacyPolicy() {
                       <td className="py-3 px-4">Error tracking</td>
                       <td className="py-3 px-4">Crash logs, device info</td>
                     </tr>
+                    <tr className="border-b border-border/50">
+                      <td className="py-3 px-4 font-medium text-foreground">PostHog</td>
+                      <td className="py-3 px-4">Product analytics & session replay</td>
+                      <td className="py-3 px-4">Anonymous usage events, session recordings, device info</td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -308,19 +313,6 @@ export default function PrivacyPolicy() {
                   and allow you to review past meals. Photos are associated with your account and
                   are deleted when you delete your account.
                 </p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-2">5.3 AI Training Participation (Optional)</h3>
-                <p>
-                  With your explicit opt-in consent, anonymized meal photos (with no personal information
-                  or metadata) may be used to improve our AI models. This participation is entirely
-                  voluntary and can be enabled or disabled in your account settings at any time.
-                </p>
-                <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
-                  <li>Only anonymized images are used—no personal data is included</li>
-                  <li>You can opt out at any time without affecting your service</li>
-                  <li>Withdrawal of consent applies to future data use only</li>
-                </ul>
               </div>
             </div>
           </section>
@@ -384,7 +376,7 @@ export default function PrivacyPolicy() {
               </div>
               <div>
                 <h3 className="font-semibold text-foreground mb-2">7.5 Right to Withdraw Consent</h3>
-                <p>Opt out of optional data uses (such as AI training) at any time without affecting core service functionality.</p>
+                <p>Opt out of optional data uses at any time without affecting core service functionality.</p>
               </div>
               <div className="p-4 rounded-lg bg-white border border-border/50">
                 <p className="text-sm">
@@ -472,9 +464,9 @@ export default function PrivacyPolicy() {
               <div>
                 <h3 className="font-semibold text-foreground mb-2">10.1 Data Processing Location</h3>
                 <p>
-                  Nutree is operated from the United States. If you access our Services from outside
-                  the US, please be aware that your data may be transferred to, stored, and processed
-                  in the United States where our servers are located.
+                  Nutree is operated by NUTREE AI VIETNAM JOINT STOCK COMPANY. Your data may be
+                  processed in servers located in various regions, including the United States and
+                  other locations where our cloud service providers operate.
                 </p>
               </div>
               <div>
@@ -545,7 +537,7 @@ export default function PrivacyPolicy() {
                 your personal data, please contact us:
               </p>
               <div className="p-6 rounded-lg bg-white border border-border/50">
-                <p className="font-semibold text-foreground mb-3">Nutree Privacy Support</p>
+                <p className="font-semibold text-foreground mb-3">NUTREE AI VIETNAM JOINT STOCK COMPANY</p>
                 <div className="space-y-2">
                   <p>
                     <strong>Email:</strong>{' '}

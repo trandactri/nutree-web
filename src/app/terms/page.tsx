@@ -55,9 +55,9 @@ export default function TermsOfService() {
             </div>
           </div>
           <div className="flex flex-wrap gap-4 text-sm text-muted">
-            <span><strong>Effective Date:</strong> December 9, 2024</span>
-            <span><strong>Last Updated:</strong> December 9, 2024</span>
-            <span><strong>Version:</strong> 1.0</span>
+            <span><strong>Effective Date:</strong> February 1, 2026</span>
+            <span><strong>Last Updated:</strong> February 1, 2026</span>
+            <span><strong>Version:</strong> 2.0</span>
           </div>
         </header>
 
@@ -71,12 +71,12 @@ export default function TermsOfService() {
             <li><a href="#section-4" className="hover:text-primary-forest">Services Description</a></li>
             <li><a href="#section-5" className="hover:text-primary-forest">Subscription Terms</a></li>
             <li><a href="#section-6" className="hover:text-primary-forest">User Content</a></li>
-            <li><a href="#section-7" className="hover:text-primary-forest">AI Training Consent</a></li>
-            <li><a href="#section-8" className="hover:text-primary-forest">Prohibited Uses</a></li>
-            <li><a href="#section-9" className="hover:text-primary-forest">Medical Disclaimer</a></li>
-            <li><a href="#section-10" className="hover:text-primary-forest">Intellectual Property</a></li>
-            <li><a href="#section-11" className="hover:text-primary-forest">Disclaimers & Limitations</a></li>
-            <li><a href="#section-12" className="hover:text-primary-forest">Termination</a></li>
+            <li><a href="#section-7" className="hover:text-primary-forest">Prohibited Uses</a></li>
+            <li><a href="#section-8" className="hover:text-primary-forest">Medical Disclaimer</a></li>
+            <li><a href="#section-9" className="hover:text-primary-forest">Intellectual Property</a></li>
+            <li><a href="#section-10" className="hover:text-primary-forest">Disclaimers & Limitations</a></li>
+            <li><a href="#section-11" className="hover:text-primary-forest">Termination</a></li>
+            <li><a href="#section-12" className="hover:text-primary-forest">Governing Law & Dispute Resolution</a></li>
             <li><a href="#section-13" className="hover:text-primary-forest">Changes to Terms</a></li>
             <li><a href="#section-14" className="hover:text-primary-forest">Contact Information</a></li>
           </ol>
@@ -92,8 +92,8 @@ export default function TermsOfService() {
             </h2>
             <div className="pl-11 space-y-3">
               <p>
-                By accessing or using Nutree (&quot;the App&quot;), you agree to be bound by these Terms of Service
-                (&quot;Terms&quot;). These Terms constitute a legally binding agreement between you and Nutree.
+                By accessing or using Nutree (the &quot;App&quot;), you agree to be bound by these Terms of Service
+                (&quot;Terms&quot;). These Terms constitute a legally binding agreement between you and NUTREE AI VIETNAM JOINT STOCK COMPANY (&quot;Nutree&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;).
               </p>
               <p>
                 If you do not agree to these Terms, you must not access or use the App. Your continued use of
@@ -189,10 +189,10 @@ export default function TermsOfService() {
                 </p>
               </div>
               <div>
-                <h3 className="font-semibold text-foreground mb-2">4.3 Meal Planning</h3>
+                <h3 className="font-semibold text-foreground mb-2">4.3 AI Meal Suggestions</h3>
                 <p>
-                  Personalized meal suggestions and weekly meal plans based on your dietary goals,
-                  preferences, and restrictions.
+                  AI-powered meal suggestions based on your dietary goals, preferences, and restrictions.
+                  Suggestions include recommended meals with ingredients and nutritional information.
                 </p>
               </div>
               <div>
@@ -213,10 +213,11 @@ export default function TermsOfService() {
             </h2>
             <div className="pl-11 space-y-4">
               <div>
-                <h3 className="font-semibold text-foreground mb-2">5.1 Standard Features</h3>
+                <h3 className="font-semibold text-foreground mb-2">5.1 Subscription Model</h3>
                 <p>
-                  Nutree offers standard features through in-app subscriptions processed by RevenueCat
-                  via Apple App Store or Google Play Store.
+                  Nutree provides core features through in-app subscriptions processed via the Apple App Store.
+                  Access to AI meal analysis, nutrition tracking, and progress analytics requires an active subscription.
+                  A free trial may be offered, which automatically converts to a paid subscription unless cancelled before the trial period ends.
                 </p>
               </div>
               <div>
@@ -285,37 +286,6 @@ export default function TermsOfService() {
           </section>
 
           {/* Section 7 */}
-          <section id="section-7" className="scroll-mt-8">
-            <h2 className="font-display text-xl font-semibold text-foreground mb-4 flex items-center gap-3">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-forest/10 text-primary-forest text-sm font-bold">7</span>
-              AI Training Consent
-            </h2>
-            <div className="pl-11 space-y-4">
-              <div>
-                <h3 className="font-semibold text-foreground mb-2">7.1 Optional Participation</h3>
-                <p>
-                  With your explicit opt-in consent, anonymized meal photos may be used to improve our
-                  AI models. This participation is entirely voluntary.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-2">7.2 Data Anonymization</h3>
-                <p>
-                  If you opt in, only anonymized images are used. No personally identifiable information
-                  is included in AI training datasets.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground mb-2">7.3 Withdrawal of Consent</h3>
-                <p>
-                  You can enable or disable AI training participation in your account settings at any time.
-                  Withdrawal of consent applies to future data use only.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          {/* Section 8 */}
           <section id="section-8" className="scroll-mt-8">
             <h2 className="font-display text-xl font-semibold text-foreground mb-4 flex items-center gap-3">
               <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-forest/10 text-primary-forest text-sm font-bold">8</span>
@@ -336,10 +306,10 @@ export default function TermsOfService() {
             </div>
           </section>
 
-          {/* Section 9 */}
-          <section id="section-9" className="scroll-mt-8">
+          {/* Section 7 */}
+          <section id="section-7" className="scroll-mt-8">
             <h2 className="font-display text-xl font-semibold text-foreground mb-4 flex items-center gap-3">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-forest/10 text-primary-forest text-sm font-bold">9</span>
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-forest/10 text-primary-forest text-sm font-bold">7</span>
               Medical Disclaimer
             </h2>
             <div className="pl-11 space-y-4">
@@ -349,7 +319,7 @@ export default function TermsOfService() {
                 </p>
               </div>
               <div>
-                <h3 className="font-semibold text-foreground mb-2">9.1 General Information Only</h3>
+                <h3 className="font-semibold text-foreground mb-2">7.1 General Information Only</h3>
                 <p>
                   The App provides general nutritional information for educational and informational
                   purposes only. It is not intended as a substitute for professional medical advice,
@@ -357,21 +327,21 @@ export default function TermsOfService() {
                 </p>
               </div>
               <div>
-                <h3 className="font-semibold text-foreground mb-2">9.2 AI Accuracy Limitations</h3>
+                <h3 className="font-semibold text-foreground mb-2">7.2 AI Accuracy Limitations</h3>
                 <p>
                   AI-generated nutritional estimates may contain inaccuracies. Always verify important
                   nutritional information with reliable sources or healthcare professionals.
                 </p>
               </div>
               <div>
-                <h3 className="font-semibold text-foreground mb-2">9.3 Consult Healthcare Providers</h3>
+                <h3 className="font-semibold text-foreground mb-2">7.3 Consult Healthcare Providers</h3>
                 <p>
                   Always consult a qualified healthcare professional before making dietary changes,
                   especially if you have medical conditions, allergies, or are taking medications.
                 </p>
               </div>
               <div>
-                <h3 className="font-semibold text-foreground mb-2">9.4 Not for Medical Conditions</h3>
+                <h3 className="font-semibold text-foreground mb-2">7.4 Not for Medical Conditions</h3>
                 <p>
                   The App is not intended to diagnose, treat, cure, or prevent any disease or medical
                   condition. Do not rely on the App for managing health conditions.
@@ -380,15 +350,15 @@ export default function TermsOfService() {
             </div>
           </section>
 
-          {/* Section 10 */}
-          <section id="section-10" className="scroll-mt-8">
+          {/* Section 8 */}
+          <section id="section-8" className="scroll-mt-8">
             <h2 className="font-display text-xl font-semibold text-foreground mb-4 flex items-center gap-3">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-forest/10 text-primary-forest text-sm font-bold">10</span>
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-forest/10 text-primary-forest text-sm font-bold">8</span>
               Intellectual Property
             </h2>
             <div className="pl-11 space-y-4">
               <div>
-                <h3 className="font-semibold text-foreground mb-2">10.1 Ownership</h3>
+                <h3 className="font-semibold text-foreground mb-2">8.1 Ownership</h3>
                 <p>
                   All content, features, functionality, trademarks, and intellectual property of Nutree
                   (excluding user-generated content) are owned by Nutree and protected by copyright,
@@ -396,7 +366,7 @@ export default function TermsOfService() {
                 </p>
               </div>
               <div>
-                <h3 className="font-semibold text-foreground mb-2">10.2 Limited License</h3>
+                <h3 className="font-semibold text-foreground mb-2">8.2 Limited License</h3>
                 <p>
                   We grant you a limited, non-exclusive, non-transferable, revocable license to use the
                   App for personal, non-commercial purposes in accordance with these Terms.
@@ -405,22 +375,22 @@ export default function TermsOfService() {
             </div>
           </section>
 
-          {/* Section 11 */}
-          <section id="section-11" className="scroll-mt-8">
+          {/* Section 9 */}
+          <section id="section-9" className="scroll-mt-8">
             <h2 className="font-display text-xl font-semibold text-foreground mb-4 flex items-center gap-3">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-forest/10 text-primary-forest text-sm font-bold">11</span>
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-forest/10 text-primary-forest text-sm font-bold">9</span>
               Disclaimers & Limitations
             </h2>
             <div className="pl-11 space-y-4">
               <div>
-                <h3 className="font-semibold text-foreground mb-2">11.1 &quot;As Is&quot; Basis</h3>
+                <h3 className="font-semibold text-foreground mb-2">9.1 &quot;As Is&quot; Basis</h3>
                 <p>
                   The App is provided &quot;as is&quot; and &quot;as available&quot; without warranties of any kind,
                   whether express, implied, or statutory.
                 </p>
               </div>
               <div>
-                <h3 className="font-semibold text-foreground mb-2">11.2 No Guarantees</h3>
+                <h3 className="font-semibold text-foreground mb-2">9.2 No Guarantees</h3>
                 <p>We do not guarantee:</p>
                 <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
                   <li>Accuracy or completeness of AI nutritional analysis</li>
@@ -430,7 +400,7 @@ export default function TermsOfService() {
                 </ul>
               </div>
               <div>
-                <h3 className="font-semibold text-foreground mb-2">11.3 Limitation of Liability</h3>
+                <h3 className="font-semibold text-foreground mb-2">9.3 Limitation of Liability</h3>
                 <p>
                   To the maximum extent permitted by law, Nutree shall not be liable for any indirect,
                   incidental, special, consequential, or punitive damages arising from your use of or
@@ -440,29 +410,29 @@ export default function TermsOfService() {
             </div>
           </section>
 
-          {/* Section 12 */}
-          <section id="section-12" className="scroll-mt-8">
+          {/* Section 10 */}
+          <section id="section-10" className="scroll-mt-8">
             <h2 className="font-display text-xl font-semibold text-foreground mb-4 flex items-center gap-3">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-forest/10 text-primary-forest text-sm font-bold">12</span>
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-forest/10 text-primary-forest text-sm font-bold">10</span>
               Termination
             </h2>
             <div className="pl-11 space-y-4">
               <div>
-                <h3 className="font-semibold text-foreground mb-2">12.1 Termination by Us</h3>
+                <h3 className="font-semibold text-foreground mb-2">10.1 Termination by Us</h3>
                 <p>
                   We may suspend or terminate your access to the App at any time, with or without cause
                   or notice, for violation of these Terms or for any other reason at our discretion.
                 </p>
               </div>
               <div>
-                <h3 className="font-semibold text-foreground mb-2">12.2 Termination by You</h3>
+                <h3 className="font-semibold text-foreground mb-2">10.2 Termination by You</h3>
                 <p>
                   You may delete your account at any time through the App settings. Upon deletion, your
                   data will be removed in accordance with our Privacy Policy.
                 </p>
               </div>
               <div>
-                <h3 className="font-semibold text-foreground mb-2">12.3 Effect of Termination</h3>
+                <h3 className="font-semibold text-foreground mb-2">10.3 Effect of Termination</h3>
                 <p>
                   Upon termination, your right to use the App ceases immediately. Provisions that by
                   their nature should survive termination will remain in effect.
@@ -471,10 +441,44 @@ export default function TermsOfService() {
             </div>
           </section>
 
-          {/* Section 13 */}
-          <section id="section-13" className="scroll-mt-8">
+          {/* Section 11 */}
+          <section id="section-11" className="scroll-mt-8">
             <h2 className="font-display text-xl font-semibold text-foreground mb-4 flex items-center gap-3">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-forest/10 text-primary-forest text-sm font-bold">13</span>
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-forest/10 text-primary-forest text-sm font-bold">11</span>
+              Governing Law & Dispute Resolution
+            </h2>
+            <div className="pl-11 space-y-4">
+              <div>
+                <h3 className="font-semibold text-foreground mb-2">11.1 Governing Law</h3>
+                <p>
+                  These Terms and any dispute arising out of or related to them shall be governed by
+                  and construed in accordance with the laws of Vietnam, without regard to its conflict
+                  of law principles.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-semibold text-foreground mb-2">11.2 Dispute Resolution</h3>
+                <p>
+                  Any dispute, controversy, or claim arising out of or relating to these Terms or the
+                  breach, termination, or invalidity thereof, shall be resolved in the first instance
+                  through good faith negotiations between the parties.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-semibold text-foreground mb-2">11.3 Competent Courts</h3>
+                <p>
+                  If the dispute cannot be resolved through negotiation within thirty (30) days, the
+                  parties agree that the competent courts of Vietnam shall have exclusive jurisdiction
+                  to resolve such disputes.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Section 12 */}
+          <section id="section-12" className="scroll-mt-8">
+            <h2 className="font-display text-xl font-semibold text-foreground mb-4 flex items-center gap-3">
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-forest/10 text-primary-forest text-sm font-bold">12</span>
               Changes to Terms
             </h2>
             <div className="pl-11 space-y-3">
@@ -490,10 +494,10 @@ export default function TermsOfService() {
             </div>
           </section>
 
-          {/* Section 14 */}
-          <section id="section-14" className="scroll-mt-8">
+          {/* Section 13 */}
+          <section id="section-13" className="scroll-mt-8">
             <h2 className="font-display text-xl font-semibold text-foreground mb-4 flex items-center gap-3">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-forest/10 text-primary-forest text-sm font-bold">14</span>
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-forest/10 text-primary-forest text-sm font-bold">13</span>
               Contact Information
             </h2>
             <div className="pl-11 space-y-4">
@@ -502,7 +506,7 @@ export default function TermsOfService() {
                 please contact us:
               </p>
               <div className="p-4 rounded-lg bg-white border border-border/50">
-                <p className="font-semibold text-foreground mb-2">Nutree AI Support</p>
+                <p className="font-semibold text-foreground mb-2">NUTREE AI VIETNAM JOINT STOCK COMPANY</p>
                 <p>
                   <strong>Email:</strong>{' '}
                   <a href={`mailto:${SITE_CONFIG.supportEmail}`} className="text-primary-forest hover:text-primary-teal">
