@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans, DM_Sans } from 'next/font/google';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { PostHogProvider } from '@/components/providers/PostHogProvider';
 import './globals.css';
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -69,9 +70,11 @@ export default function RootLayout({
         <meta name="theme-color" content="#1A4739" />
       </head>
       <body className="flex min-h-screen flex-col">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <PostHogProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </PostHogProvider>
       </body>
     </html>
   );
