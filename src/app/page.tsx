@@ -1,5 +1,5 @@
 import { AuroraBackground } from '@/components/layout/AuroraBackground';
-import { HeroV2 } from '@/components/sections/HeroV2';
+import { HeroV2 } from '@/components/sections/Hero';
 import { SocialProof } from '@/components/sections/SocialProof';
 import { HowItWorks } from '@/components/sections/HowItWorks';
 import { BentoFeatures } from '@/components/sections/BentoFeatures';
