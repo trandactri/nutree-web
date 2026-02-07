@@ -185,6 +185,11 @@
     transform-style: preserve-3d;
   }
 
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
   /* Mesh background */
   .mesh-bg {
     @apply bg-gradient-mesh;

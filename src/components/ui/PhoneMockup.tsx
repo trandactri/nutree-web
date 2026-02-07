@@ -13,7 +13,8 @@ export function PhoneMockup({ className, children, variant = 'default', backgrou
   return (
     <div
       className={cn(
-        'phone-frame w-[280px] md:w-[300px]',
+        // Mobile: smaller, tablet+: larger
+        'phone-frame w-[260px] sm:w-[280px] md:w-[300px]',
         variant === 'floating' && 'animate-float',
         className
       )}

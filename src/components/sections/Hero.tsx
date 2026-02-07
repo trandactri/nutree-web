@@ -1,11 +1,9 @@
 'use client';
 
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
-import { PhoneMockup } from '@/components/ui/PhoneMockup';
-import { FloatingIcon } from '@/components/ui/FloatingIcon';
+import { FlipPhone } from '@/components/ui/FlipPhone';
 import { SITE_CONFIG } from '@/lib/constants';
 
 // App Store Icons
@@ -22,99 +20,6 @@ function PlayStoreIcon({ className }: { className?: string }) {
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className}>
       <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 9.49l-2.302 2.302-8.634-8.635z" />
     </svg>
-  );
-}
-
-// Phone with tilt effect and inconsistent floating animation
-function TiltedPhone({
-  backgroundImage,
-  delay = 0,
-  floatDuration = 6,
-  floatOffset = 0,
-  rotateRange = 2,
-  icons = [],
-  className = ''
-}: {
-  backgroundImage: string;
-  delay?: number;
-  floatDuration?: number;
-  floatOffset?: number;
-  rotateRange?: number;
-  icons?: { emoji: string; position: string; delay: number }[];
-  className?: string;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const mouseX = useSpring(x, { stiffness: 300, damping: 30 });
-  const mouseY = useSpring(y, { stiffness: 300, damping: 30 });
-
-  const rotateX = useTransform(mouseY, [-0.5, 0.5], [15, -15]);
-  const rotateY = useTransform(mouseX, [-0.5, 0.5], [-15, 15]);
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!ref.current) return;
-    const rect = ref.current.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    x.set((e.clientX - centerX) / rect.width);
-    y.set((e.clientY - centerY) / rect.height);
-  };
-
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-  };
-
-  return (
-    <motion.div
-      ref={ref}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{ rotateX, rotateY }}
-      initial={{ opacity: 0, scale: 0.8, y: 30 }}
-      animate={{
-        opacity: 1,
-        scale: 1,
-        y: [0, -15, 0],
-        rotate: [-rotateRange, rotateRange, -rotateRange],
-      }}
-      transition={{
-        duration: 0.8,
-        delay,
-        ease: [0.34, 1.56, 0.64, 1],
-        y: {
-          duration: floatDuration,
-          repeat: Infinity,
-          ease: [0.45, 0, 0.55, 1],
-          delay: floatOffset,
-        },
-        rotate: {
-          duration: floatDuration * 1.3,
-          repeat: Infinity,
-          ease: 'easeInOut',
-          delay: floatOffset,
-        },
-      }}
-      className={`relative ${className}`}
-    >
-      {/* Glow spread */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-teal/30 via-primary-forest/20 to-transparent rounded-[3rem] blur-2xl scale-110" />
-      <PhoneMockup variant="floating" backgroundImage={backgroundImage} />
-
-      {/* Floating Icons for this phone */}
-      {icons.map((icon) => (
-        <FloatingIcon
-          key={icon.emoji}
-          emoji={icon.emoji}
-          className={icon.position}
-          delay={icon.delay}
-          size="md"
-        />
-      ))}
-    </motion.div>
   );
 }
 
@@ -228,52 +133,32 @@ export function HeroV2() {
             </motion.div>
           </div>
 
-          {/* Right: Phone Mockup with Floating Icons */}
-          <div className="flex-1 relative flex justify-center z-10">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.3 }}
-              className="relative"
-            >
-              {/* Phone Mockups with staggered entrance + tilt */}
-              <div className="flex items-center perspective-1000 gap-8">
-                <TiltedPhone
-                  backgroundImage="/images/dashboard.png"
-                  delay={0.3}
-                  floatDuration={5}
-                  floatOffset={0}
-                  rotateRange={2}
-                  icons={[
-                    { emoji: '🍊', position: 'top-16 -right-8', delay: 0.5 },
-                    { emoji: '🍋', position: 'top-1/2 -right-4', delay: 0.7 },
-                    { emoji: '🍇', position: 'top-1/3 -left-6', delay: 0.9 },
-                  ]}
-                />
-                <TiltedPhone
-                  backgroundImage="/images/goals.png"
-                  delay={0.5}
-                  floatDuration={7}
-                  floatOffset={1.5}
-                  rotateRange={3}
-                  icons={[
-                    { emoji: '🥗', position: 'top-20 -right-4', delay: 0.6 },
-                    { emoji: '🍎', position: 'bottom-20 -left-6', delay: 0.8 },
-                    { emoji: '🥑', position: 'top-1/2 -right-8', delay: 1.0 },
-                  ]}
-                />
-              </div>
-            </motion.div>
+          {/* Right: Phone Mockup with Tap-to-Flip */}
+          <div className="flex-1 relative flex justify-center items-center z-10 w-full max-w-md mx-auto">
+            <FlipPhone
+              frontImage="/images/dashboard.png"
+              backImage="/images/goals.png"
+              frontIcons={[
+                { emoji: '🍊', position: 'top-16 -right-8', delay: 0.5 },
+                { emoji: '🍋', position: 'top-1/2 -right-4', delay: 0.7 },
+                { emoji: '🍇', position: 'top-1/3 -left-6', delay: 0.9 },
+              ]}
+              backIcons={[
+                { emoji: '🥗', position: 'top-20 -right-4', delay: 0.6 },
+                { emoji: '🍎', position: 'bottom-20 -left-6', delay: 0.8 },
+                { emoji: '🥑', position: 'top-1/2 -right-8', delay: 1.0 },
+              ]}
+            />
           </div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator - moved down on mobile to avoid overlap */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        className="absolute bottom-20 sm:bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}
