@@ -21,8 +21,8 @@ export const SITE_CONFIG = {
 } as const;
 
 export const NAV_LINKS = [
+  { href: '#how-it-works', label: 'How it works' },
   { href: '#features', label: 'Features' },
-  { href: '#demo', label: 'Demo' },
   { href: '#download', label: 'Download' },
 ] as const;
 
@@ -34,9 +34,9 @@ export const FEATURES = [
     icon: 'camera',
   },
   {
-    id: 'meal-planning',
-    title: 'AI Meal Planning',
-    description: 'Conversational AI suggests personalized meals based on your goals and preferences.',
+    id: 'meal-suggestions',
+    title: 'Smart Meal Suggestions',
+    description: 'Get personalized meal ideas based on your nutrition goals and preferences.',
     icon: 'sparkles',
   },
   {
@@ -54,7 +54,7 @@ export const FEATURES = [
   {
     id: 'personalize',
     title: 'Personalize Everything',
-    description: 'Goals, 7 languages, light/dark theme, metric/imperial. Your app, your way.',
+    description: 'Goals, 2 languages (EN, VI), light/dark theme, metric/imperial. Your app, your way.',
     icon: 'settings',
   },
 ] as const;
