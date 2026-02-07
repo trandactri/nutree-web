@@ -20,7 +20,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Nutree - Your AI Nutritionist in Your Pocket',
+  title: 'Nutree | Download Today',
   description: 'AI-powered nutrition tracking with instant meal scanning, personalized meal suggestions, and real-time macro tracking. Open source, free to use.',
   keywords: ['nutrition tracking', 'AI meal scanner', 'calorie counter', 'macro tracking', 'meal suggestions', 'open source'],
   authors: [{ name: 'Nutree Team' }],
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   openGraph: {
-    title: 'Nutree - Your AI Nutritionist in Your Pocket',
+    title: 'Nutree - Your AI Nutrition Assistant in Your Pocket',
     description: 'AI-powered nutrition tracking with instant meal scanning, personalized meal suggestions, and real-time macro tracking.',
     url: 'https://nutreeai.com',
     siteName: 'Nutree',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nutree - Your AI Nutritionist in Your Pocket',
+    title: 'Nutree - Your AI Nutrition Assistant in Your Pocket',
     description: 'AI-powered nutrition tracking with instant meal scanning and personalized meal suggestions.',
     images: ['/logo-512.png'],
   },

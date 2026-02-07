@@ -1,6 +1,6 @@
 export const SITE_CONFIG = {
   name: 'Nutree',
-  tagline: 'Your AI Nutritionist in Your Pocket',
+  tagline: 'Your AI Nutrition Assistant in Your Pocket',
   description: 'AI-powered nutrition tracking with instant meal scanning, personalized meal suggestions, and real-time macro tracking.',
   url: 'https://nutreeai.com',
   supportEmail: 'nutreeaidev@gmail.com',

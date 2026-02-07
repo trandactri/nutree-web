@@ -141,7 +141,7 @@ export function HeroV2() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-teal opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-teal" />
               </span>
-              <span className="text-sm font-medium text-primary-forest">AI-Powered Nutrition</span>
+              <span className="text-sm font-medium text-primary-forest">AI Nutrition Assistant</span>
             </motion.div>
 
             {/* Headlines */}
@@ -170,7 +170,7 @@ export function HeroV2() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-lg md:text-xl text-muted max-w-md mx-auto lg:mx-0 mb-8"
             >
-              Your AI-powered nutrition coach. Snap a photo, get instant insights, and crush your health goals.
+              Your AI Nutrition Assistant. Snap a photo, get instant insights, and crush your health goals.
             </motion.p>
 
             {/* CTA Buttons */}
