@@ -119,7 +119,7 @@ function TiltedPhone({
 }
 
 export function HeroV2() {
-  const headlines = ['TRACK.', 'PLAN.', 'TRANSFORM.'];
+  const headlines = ['IDEAS.', 'TRACK.', 'THRIVE.'];
 
   return (
     <section className="relative min-h-screen pt-20 md:pt-24 overflow-hidden">
@@ -251,7 +251,7 @@ export function HeroV2() {
                   ]}
                 />
                 <TiltedPhone
-                  backgroundImage="/images/planning.png"
+                  backgroundImage="/images/goals.png"
                   delay={0.5}
                   floatDuration={7}
                   floatOffset={1.5}
