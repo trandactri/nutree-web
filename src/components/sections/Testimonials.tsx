@@ -96,15 +96,11 @@ export function Testimonials() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="section-header"
+          className="text-center mb-10"
         >
-          <span className="section-badge">Testimonials</span>
           <h2 className="section-title">
-            Loved by <span className="gradient-text">thousands</span>
+            Why choose <span className="gradient-text">Nutree</span>?
           </h2>
-          <p className="section-subtitle">
-            See what our users say about their nutrition transformation.
-          </p>
         </motion.div>
 
         {/* Testimonial Card */}

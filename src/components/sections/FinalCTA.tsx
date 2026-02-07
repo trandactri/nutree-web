@@ -201,24 +201,10 @@ export function FinalCTA() {
               <div className="relative">
                 {/* Glow */}
                 <div className="absolute inset-0 bg-white/20 blur-3xl scale-150 rounded-full" />
-                <PhoneMockup className="transform hover:rotate-0 transition-transform duration-500">
-                  <div className="flex flex-col items-center justify-center h-full p-4 bg-gradient-to-br from-white to-primary-teal/10">
-                    <div className="w-16 h-16 mb-3 rounded-2xl bg-gradient-brand flex items-center justify-center shadow-lg">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="w-8 h-8 text-white"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <span className="font-display font-bold text-sm text-primary-forest">Ready!</span>
-                    <span className="text-xs text-muted">Download now</span>
-                  </div>
-                </PhoneMockup>
+                <PhoneMockup
+                  backgroundImage="/images/cta-mockup.png"
+                  className="transform hover:rotate-0 transition-transform duration-500"
+                />
               </div>
             </motion.div>
           </div>
@@ -237,7 +223,7 @@ export function FinalCTA() {
               </div>
               <div className="h-8 w-px bg-white/20" />
               <div className="text-center">
-                <div className="font-display text-3xl font-bold text-white">7</div>
+                <div className="font-display text-3xl font-bold text-white">2</div>
                 <div className="text-sm">Languages</div>
               </div>
               <div className="h-8 w-px bg-white/20" />

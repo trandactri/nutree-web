@@ -21,8 +21,8 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: 'Nutree - Your AI Nutritionist in Your Pocket',
-  description: 'AI-powered nutrition tracking with instant meal scanning, personalized meal planning, and real-time macro tracking. Open source, free to use.',
-  keywords: ['nutrition tracking', 'AI meal scanner', 'calorie counter', 'macro tracking', 'meal planning', 'open source'],
+  description: 'AI-powered nutrition tracking with instant meal scanning, personalized meal suggestions, and real-time macro tracking. Open source, free to use.',
+  keywords: ['nutrition tracking', 'AI meal scanner', 'calorie counter', 'macro tracking', 'meal suggestions', 'open source'],
   authors: [{ name: 'Nutree Team' }],
   icons: {
     icon: [
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Nutree - Your AI Nutritionist in Your Pocket',
-    description: 'AI-powered nutrition tracking with instant meal scanning, personalized meal planning, and real-time macro tracking.',
+    description: 'AI-powered nutrition tracking with instant meal scanning, personalized meal suggestions, and real-time macro tracking.',
     url: 'https://nutreeai.com',
     siteName: 'Nutree',
     type: 'website',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Nutree - Your AI Nutritionist in Your Pocket',
-    description: 'AI-powered nutrition tracking with instant meal scanning and personalized meal planning.',
+    description: 'AI-powered nutrition tracking with instant meal scanning and personalized meal suggestions.',
     images: ['/logo-512.png'],
   },
   robots: {
