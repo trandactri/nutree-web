@@ -209,10 +209,46 @@
   @media (prefers-reduced-motion: reduce) {
     .animate-on-scroll,
     .animate-float,
-    .animate-aurora-shift,
+    .aurora-bg::before,
+    .aurora-bg::after,
     .animate-pulse-soft {
       animation: none !important;
       transition: none !important;
+    }
+  }
+
+  /* Mobile Performance Optimizations */
+  @media (max-width: 768px) {
+    /* Disable smooth scroll on mobile for better performance */
+    html {
+      scroll-behavior: auto !important;
+    }
+
+    /* Simplify aurora background - disable animations, reduce blur */
+    .aurora-bg::before,
+    .aurora-bg::after {
+      animation: none !important;
+    }
+
+    .aurora-bg::before {
+      filter: blur(40px) !important;
+      opacity: 0.6 !important;
+    }
+
+    .aurora-bg::after {
+      filter: blur(40px) !important;
+      opacity: 0.6 !important;
+    }
+
+    /* Disable glass card backdrop blur on mobile */
+    .glass-card {
+      backdrop-filter: none !important;
+      background: rgba(255, 255, 255, 0.95) !important;
+    }
+
+    .glass-card-hover {
+      backdrop-filter: none !important;
+      background: rgba(255, 255, 255, 0.95) !important;
     }
   }
 }

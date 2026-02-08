@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import { cn } from '@/lib/cn';
 
 interface FloatingIconProps {
@@ -11,6 +12,17 @@ interface FloatingIconProps {
 }
 
 export function FloatingIcon({ emoji, className, delay = 0, size = 'md' }: FloatingIconProps) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const sizeClasses = {
     sm: 'text-2xl',
     md: 'text-3xl md:text-4xl',
@@ -33,16 +45,24 @@ export function FloatingIcon({ emoji, className, delay = 0, size = 'md' }: Float
       )}
     >
       <motion.span
-        animate={{
-          y: [-10, 10, -10],
-          rotate: [-5, 5, -5],
-        }}
-        transition={{
-          duration: 4 + Math.random() * 2,
-          repeat: Infinity,
-          ease: 'easeInOut',
-          delay: Math.random() * 2,
-        }}
+        animate={
+          !isMobile
+            ? {
+                y: [-10, 10, -10],
+                rotate: [-5, 5, -5],
+              }
+            : {}
+        }
+        transition={
+          !isMobile
+            ? {
+                duration: 4 + Math.random() * 2,
+                repeat: Infinity,
+                ease: 'easeInOut',
+                delay: Math.random() * 2,
+              }
+            : {}
+        }
         className="inline-block drop-shadow-lg"
         role="img"
         aria-hidden="true"

@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import { cn } from '@/lib/cn';
 
 interface AuroraBackgroundProps {
@@ -14,6 +15,17 @@ export function AuroraBackground({
   className,
   intensity = 'medium',
 }: AuroraBackgroundProps) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const opacityMap = {
     subtle: { green: 0.2, teal: 0.15 },
     medium: { green: 0.35, teal: 0.28 },
@@ -22,6 +34,30 @@ export function AuroraBackground({
 
   const opacity = opacityMap[intensity];
 
+  // Mobile: simplified static version with reduced blur
+  if (isMobile) {
+    return (
+      <div className={cn('relative overflow-hidden', className)}>
+        {/* Static simplified blob 1 */}
+        <div
+          className="pointer-events-none absolute -top-40 -left-40 h-[400px] w-[400px] rounded-full blur-[40px]"
+          style={{
+            background: `radial-gradient(circle, rgba(45, 139, 112, ${opacity.green * 0.6}) 0%, transparent 70%)`,
+          }}
+        />
+        {/* Static simplified blob 2 */}
+        <div
+          className="pointer-events-none absolute -bottom-32 -right-32 h-[350px] w-[350px] rounded-full blur-[40px]"
+          style={{
+            background: `radial-gradient(circle, rgba(41, 182, 161, ${opacity.teal * 0.6}) 0%, transparent 70%)`,
+          }}
+        />
+        <div className="relative z-10">{children}</div>
+      </div>
+    );
+  }
+
+  // Desktop: full animated version
   return (
     <div className={cn('relative overflow-hidden', className)}>
       {/* Aurora blob 1 - Top left, green */}
