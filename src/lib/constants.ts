@@ -15,8 +15,8 @@ export const SITE_CONFIG = {
     googlePlay: '#google-play', // Placeholder - replace with actual Google Play URL
   },
   trial: {
-    days: 3,
-    message: 'Start with 3 days free. No credit card required.',
+    days: 7,
+    message: 'Start with 7 days free. No credit card required.',
   },
 } as const;
 
