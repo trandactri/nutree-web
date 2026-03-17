@@ -5,26 +5,12 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import { FlipPhone } from '@/components/ui/FlipPhone';
 import { SITE_CONFIG } from '@/lib/constants';
-
-// App Store Icons
-function AppleIcon({ className }: { className?: string }) {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className}>
-      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-    </svg>
-  );
-}
-
-function PlayStoreIcon({ className }: { className?: string }) {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className}>
-      <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 9.49l-2.302 2.302-8.634-8.635z" />
-    </svg>
-  );
-}
+import { useLocale } from '@/lib/locale-context';
+import { AppleIcon } from '@/components/ui/AppleIcon';
 
 export function HeroV2() {
-  const headlines = ['IDEAS.', 'TRACK.', 'THRIVE.'];
+  const { locale, t } = useLocale();
+  const headlines = t.hero.headlines;
 
   return (
     <section className="relative min-h-screen pt-20 md:pt-24 overflow-hidden">
@@ -46,7 +32,7 @@ export function HeroV2() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-teal opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-teal" />
               </span>
-              <span className="text-sm font-medium text-primary-forest">AI Nutrition Assistant</span>
+              <span className="text-sm font-medium text-primary-forest">{t.hero.badge}</span>
             </motion.div>
 
             {/* Headlines */}
@@ -68,6 +54,18 @@ export function HeroV2() {
               ))}
             </div>
 
+            {/* VI tagline */}
+            {locale === 'vi' && t.hero.tagline && (
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.35 }}
+                className="font-display text-2xl md:text-3xl font-bold mb-4"
+              >
+                <span className="gradient-text">{t.hero.tagline}</span>
+              </motion.p>
+            )}
+
             {/* Subheadline */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -75,7 +73,7 @@ export function HeroV2() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-lg md:text-xl text-muted max-w-md mx-auto lg:mx-0 mb-8"
             >
-              Not another calorie counter. Nutree adapts your daily targets, plans your meals, and tracks every macro — automatically.
+              {t.hero.subheadline}
             </motion.p>
 
             {/* CTA Buttons */}
@@ -92,13 +90,7 @@ export function HeroV2() {
                   className="w-full sm:w-auto gap-3 shadow-glow hover:shadow-glow-lg"
                 >
                   <AppleIcon className="h-5 w-5" />
-                  <span>Download Free</span>
-                </Button>
-              </Link>
-              <Link href={SITE_CONFIG.stores.googlePlay} aria-label="Get it on Google Play">
-                <Button variant="secondary" size="lg" className="w-full sm:w-auto gap-3">
-                  <PlayStoreIcon className="h-5 w-5" />
-                  <span>Google Play</span>
+                  <span>{t.hero.downloadFree}</span>
                 </Button>
               </Link>
             </motion.div>
@@ -114,21 +106,21 @@ export function HeroV2() {
                 <svg className="h-5 w-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
-                <span>4.9 Rating</span>
+                <span>{t.hero.trustBadges.rating}</span>
               </div>
               <div className="h-4 w-px bg-border" />
               <div className="flex items-center gap-2">
                 <svg className="h-5 w-5 text-primary-teal" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span>{SITE_CONFIG.trial.days}-Day Free Trial</span>
+                <span>{t.hero.trustBadges.freeTrial}</span>
               </div>
               <div className="h-4 w-px bg-border hidden sm:block" />
               <div className="flex items-center gap-2">
                 <svg className="h-5 w-5 text-primary-teal" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802" />
                 </svg>
-                <span>7 Languages</span>
+                <span>{t.hero.trustBadges.languages}</span>
               </div>
             </motion.div>
           </div>
@@ -165,7 +157,7 @@ export function HeroV2() {
           transition={{ duration: 1.5, repeat: Infinity }}
           className="flex flex-col items-center gap-2 text-muted"
         >
-          <span className="text-xs uppercase tracking-wider">Scroll</span>
+          <span className="text-xs uppercase tracking-wider">{t.hero.scroll}</span>
           <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
           </svg>

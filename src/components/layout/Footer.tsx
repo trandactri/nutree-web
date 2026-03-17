@@ -1,9 +1,14 @@
+'use client';
+
 import Link from 'next/link';
 import { Logo } from '@/components/ui/Logo';
 import { SITE_CONFIG, NAV_LINKS } from '@/lib/constants';
+import { useLocale } from '@/lib/locale-context';
+import { getNavLabel } from '@/lib/translations';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useLocale();
 
   return (
     <footer className="border-t border-border/50 bg-background/50">
@@ -20,7 +25,7 @@ export function Footer() {
           {/* Links */}
           <div className="space-y-4">
             <h3 className="font-display font-semibold text-foreground">
-              Quick Links
+              {t.footer.quickLinks}
             </h3>
             <nav className="flex flex-col gap-2">
               {NAV_LINKS.map((link) => (
@@ -29,7 +34,7 @@ export function Footer() {
                   href={link.href}
                   className="text-sm text-muted transition-colors hover:text-foreground"
                 >
-                  {link.label}
+                  {getNavLabel(link.href, t.nav)}
                 </Link>
               ))}
             </nav>
@@ -38,16 +43,16 @@ export function Footer() {
           {/* Contact */}
           <div className="space-y-4">
             <h3 className="font-display font-semibold text-foreground">
-              Get in Touch
+              {t.footer.getInTouch}
             </h3>
             <p className="text-sm text-muted">
-              Have questions or feedback? We&apos;d love to hear from you.
+              {t.footer.contactPrompt}
             </p>
             <Link
               href={`mailto:${SITE_CONFIG.supportEmail}`}
               className="inline-flex items-center gap-2 text-sm font-medium text-primary-forest transition-colors hover:text-primary-teal"
             >
-              Contact Support
+              {t.footer.contactSupport}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -68,10 +73,10 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border/50 pt-8 text-sm text-muted md:flex-row">
-          <p>&copy; {currentYear} Nutree. All rights reserved.</p>
+          <p>&copy; {currentYear} {t.footer.copyright}</p>
           <div className="flex items-center gap-4">
-            <Link href="/privacy" className="hover:text-foreground">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-foreground">Terms of Service</Link>
+            <Link href="/privacy" className="hover:text-foreground">{t.footer.privacyPolicy}</Link>
+            <Link href="/terms" className="hover:text-foreground">{t.footer.termsOfService}</Link>
           </div>
         </div>
       </div>
