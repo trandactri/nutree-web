@@ -7,6 +7,8 @@ import { Button } from '@/components/ui/Button';
 import { PhoneMockup } from '@/components/ui/PhoneMockup';
 import { useInView } from '@/hooks/useInView';
 import { SITE_CONFIG } from '@/lib/constants';
+import { useLocale } from '@/lib/locale-context';
+import { AppleIcon } from '@/components/ui/AppleIcon';
 
 // Confetti particle
 function ConfettiParticle({ delay, x }: { delay: number; x: number }) {
@@ -39,26 +41,10 @@ function ConfettiParticle({ delay, x }: { delay: number; x: number }) {
   );
 }
 
-// App Store Icons
-function AppleIcon({ className }: { className?: string }) {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className}>
-      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-    </svg>
-  );
-}
-
-function PlayStoreIcon({ className }: { className?: string }) {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className}>
-      <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 9.49l-2.302 2.302-8.634-8.635z" />
-    </svg>
-  );
-}
-
 export function FinalCTA() {
   const [showConfetti, setShowConfetti] = useState(false);
   const { ref, isInView } = useInView({ threshold: 0.2 });
+  const { t } = useLocale();
 
   const triggerConfetti = () => {
     setShowConfetti(true);
@@ -93,7 +79,7 @@ export function FinalCTA() {
                   🎉
                 </span>
                 <span className="text-sm font-medium text-white">
-                  Start Your Transformation
+                  {t.finalCta.badge}
                 </span>
               </motion.div>
 
@@ -104,7 +90,7 @@ export function FinalCTA() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
               >
-                Life happens. Cheat days happen. Nutree makes sure they don&apos;t matter.
+                {t.finalCta.headline}
               </motion.h2>
 
               {/* Subtext */}
@@ -114,7 +100,7 @@ export function FinalCTA() {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="text-lg text-white/80 max-w-lg mx-auto lg:mx-0 mb-8"
               >
-                Start your {SITE_CONFIG.trial.days}-day free trial. No credit card required. Your AI Nutrition Assistant adapts, so you never have to start over.
+                {t.finalCta.subtext}
               </motion.p>
 
               {/* CTA Buttons with Confetti */}
@@ -150,27 +136,8 @@ export function FinalCTA() {
                   >
                     <AppleIcon className="h-6 w-6" />
                     <div className="text-left">
-                      <div className="text-xs font-normal opacity-70">Download on the</div>
-                      <div className="text-sm font-semibold -mt-0.5">App Store</div>
-                    </div>
-                  </Button>
-                </Link>
-
-                <Link
-                  href={SITE_CONFIG.stores.googlePlay}
-                  aria-label="Get it on Google Play"
-                  onClick={triggerConfetti}
-                  onMouseEnter={triggerConfetti}
-                >
-                  <Button
-                    variant="secondary"
-                    size="lg"
-                    className="w-full sm:w-auto gap-3 border-white/30 bg-white/10 text-white hover:bg-white/20 hover:border-white/50"
-                  >
-                    <PlayStoreIcon className="h-6 w-6" />
-                    <div className="text-left">
-                      <div className="text-xs font-normal opacity-70">Get it on</div>
-                      <div className="text-sm font-semibold -mt-0.5">Google Play</div>
+                      <div className="text-xs font-normal opacity-70">{t.finalCta.downloadOnThe}</div>
+                      <div className="text-sm font-semibold -mt-0.5">{t.finalCta.appStore}</div>
                     </div>
                   </Button>
                 </Link>
@@ -183,7 +150,7 @@ export function FinalCTA() {
                 transition={{ duration: 0.5, delay: 0.5 }}
                 className="mt-6 text-sm text-white/60"
               >
-                {SITE_CONFIG.trial.days}-Day Free Trial • No Credit Card Required
+                {t.finalCta.trustMessage}
               </motion.p>
             </div>
 
@@ -219,22 +186,22 @@ export function FinalCTA() {
             <div className="flex flex-wrap items-center justify-center gap-8 text-white/80">
               <div className="text-center">
                 <div className="font-display text-3xl font-bold text-white">{SITE_CONFIG.trial.days}</div>
-                <div className="text-sm">Days Free</div>
+                <div className="text-sm">{t.finalCta.stats.daysFree}</div>
               </div>
               <div className="h-8 w-px bg-white/20" />
               <div className="text-center">
                 <div className="font-display text-3xl font-bold text-white">7</div>
-                <div className="text-sm">Languages</div>
+                <div className="text-sm">{t.finalCta.stats.languages}</div>
               </div>
               <div className="h-8 w-px bg-white/20" />
               <div className="text-center">
                 <div className="font-display text-3xl font-bold text-white">AI</div>
-                <div className="text-sm">Powered</div>
+                <div className="text-sm">{t.finalCta.stats.aiPowered}</div>
               </div>
               <div className="h-8 w-px bg-white/20 hidden sm:block" />
               <div className="text-center hidden sm:block">
                 <div className="font-display text-3xl font-bold text-white">4.9</div>
-                <div className="text-sm">Rating</div>
+                <div className="text-sm">{t.finalCta.stats.rating}</div>
               </div>
             </div>
           </motion.div>

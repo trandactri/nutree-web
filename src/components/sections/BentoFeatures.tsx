@@ -5,20 +5,17 @@ import { motion, AnimatePresence, PanInfo } from 'framer-motion';
 import { useInView } from '@/hooks/useInView';
 import { cn } from '@/lib/cn';
 import { PhoneMockup } from '@/components/ui/PhoneMockup';
+import { useLocale } from '@/lib/locale-context';
+import { renderTitle } from '@/lib/render-title';
 
-interface FeatureItem {
+interface FeatureConfig {
   id: string;
-  title: string;
-  description: string;
   icon: React.ReactNode;
   screenshot?: string;
 }
 
-const FEATURES: FeatureItem[] = [
-  {
-    id: 'ai-scanning',
-    title: 'Effortless Food Logging',
-    description: 'Photo scan, barcode, or describe in plain text. AI decomposes every ingredient and derives fiber-aware calories from your macros.',
+const FEATURE_CONFIG: Record<string, Omit<FeatureConfig, 'id'>> = {
+  'ai-scanning': {
     screenshot: '/images/meal-scanning.png',
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -27,10 +24,7 @@ const FEATURES: FeatureItem[] = [
       </svg>
     ),
   },
-  {
-    id: 'meal-suggestions',
-    title: 'Daily Meal Guidance',
-    description: 'Personalized meals with exact portions, a meal prep calendar for your week, and step-by-step recipe instructions.',
+  'meal-suggestions': {
     screenshot: '/images/meal-suggestions.png',
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -38,10 +32,7 @@ const FEATURES: FeatureItem[] = [
       </svg>
     ),
   },
-  {
-    id: 'dashboard',
-    title: 'No Guilt. Ever.',
-    description: 'Cheat day? Nutree rebalances your weekly budget and adjusts tomorrow\'s target automatically. Life happens — Nutree adapts.',
+  'dashboard': {
     screenshot: '/images/dashboard.png',
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -49,10 +40,7 @@ const FEATURES: FeatureItem[] = [
       </svg>
     ),
   },
-  {
-    id: 'edit',
-    title: 'Science-Based Goals',
-    description: 'Cut, bulk, or recomposition — weight-based macros (g/kg) grounded in evidence, with TDEE personalized to your body.',
+  'edit': {
     screenshot: '/images/edit-meal.png',
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -60,46 +48,46 @@ const FEATURES: FeatureItem[] = [
       </svg>
     ),
   },
-  {
-    id: 'languages',
-    title: '7 Languages',
-    description: 'Available in 7 languages with dark/light themes and redesigned onboarding. Your AI Nutrition Assistant, your way.',
+  'languages': {
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802" />
       </svg>
     ),
   },
-  {
-    id: 'reports',
-    title: 'Weekly Nutrition Budget',
-    description: 'Adaptive targets that update daily based on your real consumption. Next-day preview so you always know what\'s coming.',
+  'reports': {
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
       </svg>
     ),
   },
-];
+};
 
 export function BentoFeatures() {
   const { ref, isInView } = useInView({ threshold: 0.1 });
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const { t } = useLocale();
 
-  const selectedFeature = FEATURES[selectedIndex]?.id;
-  const selectedItem = FEATURES[selectedIndex];
+  const features = t.features.items.map(item => ({
+    ...item,
+    ...(FEATURE_CONFIG[item.id] ?? { icon: null }),
+  }));
+
+  const selectedFeature = features[selectedIndex]?.id;
+  const selectedItem = features[selectedIndex];
 
   const handleSwipe = (_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     const swipeThreshold = 50;
     if (info.offset.x > swipeThreshold && selectedIndex > 0) {
       setSelectedIndex(selectedIndex - 1);
-    } else if (info.offset.x < -swipeThreshold && selectedIndex < FEATURES.length - 1) {
+    } else if (info.offset.x < -swipeThreshold && selectedIndex < features.length - 1) {
       setSelectedIndex(selectedIndex + 1);
     }
   };
 
   const selectFeature = (id: string) => {
-    const index = FEATURES.findIndex(f => f.id === id);
+    const index = features.findIndex(f => f.id === id);
     if (index !== -1) setSelectedIndex(index);
   };
 
@@ -114,7 +102,7 @@ export function BentoFeatures() {
           className="text-center mb-10"
         >
           <h2 className="section-title">
-            What does <span className="gradient-text">Nutree</span> include?
+            {renderTitle(t.features.title)}
           </h2>
         </motion.div>
 
@@ -158,7 +146,7 @@ export function BentoFeatures() {
                         <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-primary-forest/10 text-primary-forest flex items-center justify-center">
                           {selectedItem?.icon}
                         </div>
-                        <span className="text-muted text-sm">Coming soon</span>
+                        <span className="text-muted text-sm">{selectedItem?.title}</span>
                       </div>
                     )}
                   </motion.div>
@@ -168,7 +156,7 @@ export function BentoFeatures() {
 
             {/* Swipe indicator dots */}
             <div className="flex items-center gap-2 mt-4">
-              {FEATURES.map((_, index) => (
+              {features.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setSelectedIndex(index)}
@@ -184,7 +172,7 @@ export function BentoFeatures() {
             </div>
 
             {/* Swipe hint */}
-            <p className="text-xs text-muted mt-2">Swipe to browse features</p>
+            <p className="text-xs text-muted mt-2">{t.features.swipeHint}</p>
           </motion.div>
 
           {/* Right: Feature List */}
@@ -194,7 +182,7 @@ export function BentoFeatures() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="space-y-3 order-1 lg:order-2"
           >
-            {FEATURES.map((item, index) => {
+            {features.map((item, index) => {
               const isSelected = selectedFeature === item.id;
               return (
                 <motion.button

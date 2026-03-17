@@ -75,27 +75,36 @@ export const translations: Record<Locale, TranslationStrings> = {
       badge: 'AI Nutrition Assistant',
       headlines: ['IDEAS.', 'TRACK.', 'THRIVE.'],
       subheadline:
-        'Your AI Nutrition Assistant. Snap a photo, get instant insights, and crush your health goals.',
+        'Not another calorie counter. Nutree adapts your daily targets, plans your meals, and tracks every macro — automatically.',
       downloadFree: 'Download Free',
       scroll: 'Scroll',
       trustBadges: {
         rating: '4.9 Rating',
         freeTrial: '7-Day Free Trial',
-        languages: 'EN & VI',
+        languages: '7 Languages',
       },
     },
     socialProof: {
       mealsTracked: 'Meals Tracked',
       rating: 'App Store Rating',
       accuracy: 'AI Accuracy',
-      languages: 'Languages (EN & VI)',
+      languages: 'Languages Supported',
     },
     howItWorks: {
       title: 'How {Nutree} works',
       steps: [
-        { title: 'Snap', description: 'Point camera at any meal' },
-        { title: 'Analyze', description: 'AI breaks down nutrition instantly' },
-        { title: 'Achieve', description: 'Track progress & hit your goals' },
+        {
+          title: 'Log',
+          description: 'Snap a photo, scan a barcode, or describe your meal in plain text',
+        },
+        {
+          title: 'Adapt',
+          description: 'AI breaks down macros and rebalances your weekly budget automatically',
+        },
+        {
+          title: 'Achieve',
+          description: 'Cut, bulk, or recomp — hit your goals without guilt',
+        },
       ],
     },
     features: {
@@ -104,27 +113,39 @@ export const translations: Record<Locale, TranslationStrings> = {
       items: [
         {
           id: 'ai-scanning',
-          title: 'AI Food Scanner',
+          title: 'Effortless Food Logging',
           description:
-            'Point your camera at any meal and get instant nutrition data with 95% accuracy.',
+            'Photo scan, barcode, or describe in plain text. AI decomposes every ingredient and derives fiber-aware calories from your macros.',
         },
         {
           id: 'meal-suggestions',
-          title: 'Meal Ideas Suggestion',
+          title: 'Daily Meal Guidance',
           description:
-            'Get personalized meal ideas based on your nutrition goals and preferences.',
-        },
-        {
-          id: 'weekly-budget',
-          title: 'Smart Weekly Budget',
-          description:
-            'AI-powered weekly calorie budget that adapts to your eating patterns.',
+            'Personalized meals with exact portions, a meal prep calendar for your week, and step-by-step recipe instructions.',
         },
         {
           id: 'dashboard',
-          title: 'Calories Tracking System',
+          title: 'No Guilt. Ever.',
           description:
-            'Track macros with beautiful visualizations and progress insights.',
+            "Cheat day? Nutree rebalances your weekly budget and adjusts tomorrow's target automatically. Life happens — Nutree adapts.",
+        },
+        {
+          id: 'edit',
+          title: 'Science-Based Goals',
+          description:
+            'Cut, bulk, or recomposition — weight-based macros (g/kg) grounded in evidence, with TDEE personalized to your body.',
+        },
+        {
+          id: 'languages',
+          title: '7 Languages',
+          description:
+            'Available in 7 languages with dark/light themes and redesigned onboarding. Your AI Nutrition Assistant, your way.',
+        },
+        {
+          id: 'reports',
+          title: 'Weekly Nutrition Budget',
+          description:
+            "Adaptive targets that update daily based on your real consumption. Next-day preview so you always know what's coming.",
         },
       ],
     },
@@ -167,11 +188,11 @@ export const translations: Record<Locale, TranslationStrings> = {
     },
     finalCta: {
       badge: 'Start Your Transformation',
-      headline: 'Ready to transform your health?',
+      headline: "Life happens. Cheat days happen. Nutree makes sure they don't matter.",
       downloadOnThe: 'Download on the',
       appStore: 'App Store',
       subtext:
-        'Download Nutree and get 7 days free access to all standard features. No credit card required.',
+        'Start your 7-day free trial. No credit card required. Your AI Nutrition Assistant adapts, so you never have to start over.',
       trustMessage: '7-Day Free Trial \u2022 No Credit Card Required',
       stats: {
         daysFree: 'Days Free',
@@ -201,33 +222,36 @@ export const translations: Record<Locale, TranslationStrings> = {
       badge: 'Trợ Lý Dinh Dưỡng AI',
       headlines: ['Ý TƯỞNG.', 'THEO DÕI.', 'PHÁT TRIỂN.'],
       subheadline:
-        'Trợ lý dinh dưỡng AI của bạn. Chụp ảnh, nhận phân tích dinh dưỡng tức thì và chinh phục mục tiêu sức khỏe.',
+        'Không chỉ là đếm calo. Nutree tự động điều chỉnh mục tiêu hàng ngày, lên kế hoạch bữa ăn và theo dõi từng chỉ số dinh dưỡng — hoàn toàn tự động.',
       downloadFree: 'Tải Miễn Phí',
       scroll: 'Cuộn',
       tagline: 'Tăng Cơ Giảm Mỡ',
       trustBadges: {
         rating: 'Đánh giá 4.9',
         freeTrial: 'Dùng thử 7 ngày',
-        languages: 'EN & VI',
+        languages: '7 Ngôn ngữ',
       },
     },
     socialProof: {
       mealsTracked: 'Bữa ăn đã theo dõi',
       rating: 'Đánh giá App Store',
       accuracy: 'Độ chính xác AI',
-      languages: 'Ngôn ngữ (EN & VI)',
+      languages: 'Ngôn ngữ được hỗ trợ',
     },
     howItWorks: {
       title: '{Nutree} hoạt động như thế nào',
       steps: [
-        { title: 'Chụp', description: 'Hướng camera vào bất kỳ bữa ăn nào' },
         {
-          title: 'Phân tích',
-          description: 'AI phân tích dinh dưỡng ngay lập tức',
+          title: 'Ghi chép',
+          description: 'Chụp ảnh, quét mã vạch hoặc mô tả bữa ăn bằng văn bản thông thường',
+        },
+        {
+          title: 'Điều chỉnh',
+          description: 'AI phân tích macro và tự động cân bằng lại ngân sách tuần của bạn',
         },
         {
           title: 'Đạt mục tiêu',
-          description: 'Theo dõi tiến trình & đạt mục tiêu',
+          description: 'Giảm mỡ, tăng cơ hoặc tái cân bằng — đạt mục tiêu mà không lo lắng',
         },
       ],
     },
@@ -237,27 +261,39 @@ export const translations: Record<Locale, TranslationStrings> = {
       items: [
         {
           id: 'ai-scanning',
-          title: 'Máy quét thực phẩm AI',
+          title: 'Ghi Chép Thực Phẩm Dễ Dàng',
           description:
-            'Hướng camera vào bất kỳ bữa ăn nào và nhận dữ liệu dinh dưỡng tức thì với độ chính xác 95%.',
+            'Chụp ảnh, quét mã vạch hoặc mô tả bằng văn bản. AI phân tích từng nguyên liệu và tính calo từ macro có tính đến chất xơ.',
         },
         {
           id: 'meal-suggestions',
-          title: 'Gợi ý bữa ăn',
+          title: 'Hướng Dẫn Bữa Ăn Hàng Ngày',
           description:
-            'Nhận gợi ý bữa ăn cá nhân hóa dựa trên mục tiêu dinh dưỡng của bạn.',
-        },
-        {
-          id: 'weekly-budget',
-          title: 'Ngân sách tuần thông minh',
-          description:
-            'Ngân sách calo hàng tuần do AI hỗ trợ, tự động điều chỉnh theo thói quen ăn uống của bạn.',
+            'Bữa ăn cá nhân hóa với khẩu phần chính xác, lịch chuẩn bị bữa ăn cho cả tuần và hướng dẫn nấu ăn từng bước.',
         },
         {
           id: 'dashboard',
-          title: 'Hệ thống theo dõi calo',
+          title: 'Không Lo Lắng. Mãi Mãi.',
           description:
-            'Theo dõi macro với biểu đồ trực quan và thông tin chi tiết về tiến trình.',
+            'Ngày ăn kiêng thất bại? Nutree tự động cân bằng lại ngân sách tuần và điều chỉnh mục tiêu ngày mai. Cuộc sống xảy ra — Nutree thích nghi.',
+        },
+        {
+          id: 'edit',
+          title: 'Mục Tiêu Dựa Trên Khoa Học',
+          description:
+            'Giảm mỡ, tăng cơ hoặc tái cân bằng — macro dựa trên cân nặng (g/kg) có căn cứ khoa học, TDEE được cá nhân hóa theo cơ thể bạn.',
+        },
+        {
+          id: 'languages',
+          title: '7 Ngôn Ngữ',
+          description:
+            'Hỗ trợ 7 ngôn ngữ với giao diện tối/sáng và trải nghiệm khởi đầu được thiết kế lại. Trợ lý dinh dưỡng AI theo cách của bạn.',
+        },
+        {
+          id: 'reports',
+          title: 'Ngân Sách Dinh Dưỡng Tuần',
+          description:
+            'Mục tiêu thích ứng cập nhật hàng ngày dựa trên lượng tiêu thụ thực tế. Xem trước ngày hôm sau để luôn biết kế hoạch tiếp theo.',
         },
       ],
     },
@@ -300,11 +336,11 @@ export const translations: Record<Locale, TranslationStrings> = {
     },
     finalCta: {
       badge: 'Bắt đầu thay đổi',
-      headline: 'Sẵn sàng thay đổi sức khỏe của bạn?',
+      headline: 'Cuộc sống xảy ra. Ngày ăn kiêng thất bại xảy ra. Nutree đảm bảo chúng không quan trọng.',
       downloadOnThe: 'Tải về trên',
       appStore: 'App Store',
       subtext:
-        'Tải Nutree và nhận 7 ngày sử dụng miễn phí tất cả tính năng. Không cần thẻ tín dụng.',
+        'Bắt đầu dùng thử 7 ngày miễn phí. Không cần thẻ tín dụng. Trợ lý dinh dưỡng AI của bạn tự thích nghi, để bạn không bao giờ phải bắt đầu lại.',
       trustMessage: 'Dùng thử 7 ngày \u2022 Không cần thẻ tín dụng',
       stats: {
         daysFree: 'Ngày miễn phí',

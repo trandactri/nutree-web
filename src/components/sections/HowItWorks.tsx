@@ -2,20 +2,18 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from '@/hooks/useInView';
+import { useLocale } from '@/lib/locale-context';
+import { renderTitle } from '@/lib/render-title';
 
-interface Step {
+interface StepConfig {
   number: number;
-  title: string;
-  description: string;
-  icon: React.ReactNode;
   gradient: string;
+  icon: React.ReactNode;
 }
 
-const STEPS: Step[] = [
+const STEP_CONFIG: StepConfig[] = [
   {
     number: 1,
-    title: 'Log',
-    description: 'Snap a photo, scan a barcode, or describe your meal in plain text',
     gradient: 'from-primary-teal to-primary-emerald',
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -26,8 +24,6 @@ const STEPS: Step[] = [
   },
   {
     number: 2,
-    title: 'Adapt',
-    description: 'AI breaks down macros and rebalances your weekly budget automatically',
     gradient: 'from-primary-emerald to-energy-lime',
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -37,8 +33,6 @@ const STEPS: Step[] = [
   },
   {
     number: 3,
-    title: 'Achieve',
-    description: 'Cut, bulk, or recomp — hit your goals without guilt',
     gradient: 'from-energy-lime to-primary-forest',
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -50,6 +44,13 @@ const STEPS: Step[] = [
 
 export function HowItWorks() {
   const { ref, isInView } = useInView({ threshold: 0.1 });
+  const { t } = useLocale();
+
+  const steps = t.howItWorks.steps.map((step, i) => ({
+    ...STEP_CONFIG[i],
+    title: step.title,
+    description: step.description,
+  }));
 
   return (
     <section ref={ref} id="how-it-works" className="section-padding relative overflow-hidden">
@@ -65,28 +66,8 @@ export function HowItWorks() {
           className="text-center mb-12"
         >
           <h2 className="section-title">
-            How <span className="gradient-text">Nutree</span> works
+            {renderTitle(t.howItWorks.title)}
           </h2>
-        </motion.div>
-
-        {/* Video Placeholder */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-4xl mx-auto mb-16"
-        >
-          {/* VIDEO: Replace div below with iframe/video element */}
-          <div className="relative aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-primary-forest/5 to-primary-teal/10 border border-border shadow-glass">
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
-              <div className="w-20 h-20 rounded-full bg-gradient-brand flex items-center justify-center shadow-glow cursor-pointer hover:scale-110 transition-transform">
-                <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </div>
-              <span className="text-muted text-sm">Video coming soon</span>
-            </div>
-          </div>
         </motion.div>
 
         {/* Steps - Modern Timeline Style */}
@@ -97,7 +78,7 @@ export function HowItWorks() {
             <div className="absolute top-[60px] left-[16.67%] right-[16.67%] h-1 bg-gradient-to-r from-primary-teal via-primary-emerald to-energy-lime rounded-full" />
 
             <div className="grid grid-cols-3 gap-6">
-              {STEPS.map((step, index) => (
+              {steps.map((step, index) => (
                 <motion.div
                   key={step.number}
                   initial={{ opacity: 0, y: 30 }}
@@ -135,7 +116,7 @@ export function HowItWorks() {
             <div className="absolute left-[27px] top-0 bottom-0 w-1 bg-gradient-to-b from-primary-teal via-primary-emerald to-energy-lime rounded-full" />
 
             <div className="space-y-8">
-              {STEPS.map((step, index) => (
+              {steps.map((step, index) => (
                 <motion.div
                   key={step.number}
                   initial={{ opacity: 0, x: -20 }}
