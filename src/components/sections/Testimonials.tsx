@@ -4,55 +4,10 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from '@/hooks/useInView';
 import { cn } from '@/lib/cn';
+import { useLocale } from '@/lib/locale-context';
+import { renderTitle } from '@/lib/render-title';
 
-interface Testimonial {
-  id: string;
-  quote: string;
-  author: string;
-  role: string;
-  achievement?: string;
-  rating: number;
-  avatar: string;
-}
-
-const TESTIMONIALS: Testimonial[] = [
-  {
-    id: '1',
-    quote: 'Nutree completely changed how I track my food. The AI is incredibly accurate and saves me so much time every day. I finally hit my protein goals consistently!',
-    author: 'Sarah M.',
-    role: 'Fitness Enthusiast',
-    achievement: 'Lost 15 lbs in 3 months',
-    rating: 5,
-    avatar: 'SM',
-  },
-  {
-    id: '2',
-    quote: 'As a busy professional, I never had time to manually log meals. Now I just snap a photo and I am done. The meal planning feature is a game changer for my weekly prep.',
-    author: 'David K.',
-    role: 'Software Engineer',
-    achievement: 'Gained 10 lbs muscle',
-    rating: 5,
-    avatar: 'DK',
-  },
-  {
-    id: '3',
-    quote: 'I have tried every nutrition app out there. Nutree is by far the most accurate and easiest to use. The Vietnamese language support is perfect for my family.',
-    author: 'Linh T.',
-    role: 'Working Mom',
-    achievement: 'Whole family tracking',
-    rating: 5,
-    avatar: 'LT',
-  },
-  {
-    id: '4',
-    quote: 'The AI meal suggestions are spot on. It learned my preferences quickly and now suggests meals I actually want to eat. Down 20 lbs and counting!',
-    author: 'Marcus J.',
-    role: 'Personal Trainer',
-    achievement: 'Recommends to clients',
-    rating: 5,
-    avatar: 'MJ',
-  },
-];
+const AVATARS = ['SM', 'DK', 'LT', 'MJ'];
 
 function StarRating({ rating }: { rating: number }) {
   return (
@@ -74,15 +29,22 @@ function StarRating({ rating }: { rating: number }) {
 export function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
   const { ref, isInView } = useInView({ threshold: 0.2 });
+  const { t } = useLocale();
 
-  const activeTestimonial = TESTIMONIALS[activeIndex];
+  const testimonials = t.testimonials.items.map((item, i) => ({
+    ...item,
+    rating: 5,
+    avatar: AVATARS[i],
+  }));
+
+  const active = testimonials[activeIndex];
 
   const nextTestimonial = () => {
-    setActiveIndex((prev) => (prev + 1) % TESTIMONIALS.length);
+    setActiveIndex((prev) => (prev + 1) % testimonials.length);
   };
 
   const prevTestimonial = () => {
-    setActiveIndex((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
+    setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
   return (
@@ -99,7 +61,7 @@ export function Testimonials() {
           className="text-center mb-10"
         >
           <h2 className="section-title">
-            Why choose <span className="gradient-text">Nutree</span>?
+            {renderTitle(t.testimonials.title)}
           </h2>
         </motion.div>
 
@@ -121,7 +83,7 @@ export function Testimonials() {
             {/* Content */}
             <AnimatePresence mode="wait">
               <motion.div
-                key={activeTestimonial.id}
+                key={active.id}
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
@@ -130,29 +92,29 @@ export function Testimonials() {
               >
                 {/* Rating */}
                 <div className="flex justify-center mb-6">
-                  <StarRating rating={activeTestimonial.rating} />
+                  <StarRating rating={active.rating} />
                 </div>
 
                 {/* Quote */}
                 <blockquote className="text-lg md:text-xl text-foreground leading-relaxed mb-8">
-                  &ldquo;{activeTestimonial.quote}&rdquo;
+                  &ldquo;{active.quote}&rdquo;
                 </blockquote>
 
                 {/* Author */}
                 <div className="flex items-center justify-center gap-4">
                   {/* Avatar */}
                   <div className="w-14 h-14 rounded-full bg-gradient-brand flex items-center justify-center text-white font-display font-bold">
-                    {activeTestimonial.avatar}
+                    {active.avatar}
                   </div>
 
                   <div className="text-left">
                     <div className="font-display font-bold text-foreground">
-                      {activeTestimonial.author}
+                      {active.author}
                     </div>
-                    <div className="text-sm text-muted">{activeTestimonial.role}</div>
-                    {activeTestimonial.achievement && (
+                    <div className="text-sm text-muted">{active.role}</div>
+                    {active.achievement && (
                       <div className="text-sm text-primary-teal font-medium mt-0.5">
-                        {activeTestimonial.achievement}
+                        {active.achievement}
                       </div>
                     )}
                   </div>
@@ -186,7 +148,7 @@ export function Testimonials() {
 
               {/* Dots */}
               <div className="flex gap-2">
-                {TESTIMONIALS.map((_, index) => (
+                {testimonials.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setActiveIndex(index)}

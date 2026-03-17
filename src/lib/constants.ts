@@ -6,7 +6,6 @@ export const SITE_CONFIG = {
   supportEmail: 'nutreeaidev@gmail.com',
   stores: {
     appStore: '#app-store', // Placeholder - replace with actual App Store URL
-    googlePlay: '#google-play', // Placeholder - replace with actual Google Play URL
   },
   trial: {
     days: 7,
