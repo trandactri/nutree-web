@@ -5,6 +5,7 @@ import { motion, AnimatePresence, PanInfo } from 'framer-motion';
 import { useInView } from '@/hooks/useInView';
 import { cn } from '@/lib/cn';
 import { PhoneMockup } from '@/components/ui/PhoneMockup';
+import Image from 'next/image';
 import { useLocale } from '@/lib/locale-context';
 import { renderTitle } from '@/lib/render-title';
 
@@ -131,14 +132,15 @@ export function BentoFeatures() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -50 }}
                     transition={{ duration: 0.25 }}
-                    className="w-full h-full flex items-center justify-center bg-gradient-to-br from-white to-primary-teal/5"
+                    className="relative w-full h-full flex items-center justify-center bg-gradient-to-br from-white to-primary-teal/5"
                   >
                     {selectedItem?.screenshot ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
+                      <Image
                         src={selectedItem.screenshot}
                         alt={`${selectedItem.title} screenshot`}
-                        className="w-full h-full object-cover"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 280px, 350px"
                         draggable={false}
                       />
                     ) : (
