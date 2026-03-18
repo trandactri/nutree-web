@@ -115,7 +115,7 @@ export const translations: Record<Locale, TranslationStrings> = {
           id: 'ai-scanning',
           title: 'Effortless Food Logging',
           description:
-            'Snap a photo, scan a barcode, or type what you ate. AI breaks down every ingredient automatically.',
+            'Snap a photo, scan a barcode, or type what you ate. AI does the rest.',
         },
         {
           id: 'meal-suggestions',
@@ -263,7 +263,7 @@ export const translations: Record<Locale, TranslationStrings> = {
           id: 'ai-scanning',
           title: 'Ghi bữa ăn siêu nhanh',
           description:
-            'Chụp ảnh, scan mã vạch hoặc gõ tên món. AI tự tách từng nguyên liệu và tính calo.',
+            'Chụp ảnh, scan mã vạch hoặc gõ tên món. AI lo phần còn lại.',
         },
         {
           id: 'meal-suggestions',
