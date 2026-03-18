@@ -79,7 +79,7 @@ export const translations: Record<Locale, TranslationStrings> = {
       downloadFree: 'Download Free',
       scroll: 'Scroll',
       trustBadges: {
-        rating: '4.9 Rating',
+        rating: 'AI-Powered',
         freeTrial: '7-Day Free Trial',
         languages: '7 Languages',
       },
@@ -227,7 +227,7 @@ export const translations: Record<Locale, TranslationStrings> = {
       scroll: 'Kéo xuống',
       tagline: 'Tăng Cơ Giảm Mỡ',
       trustBadges: {
-        rating: '4.9 sao',
+        rating: 'AI',
         freeTrial: 'Dùng thử 7 ngày',
         languages: '7 ngôn ngữ',
       },
