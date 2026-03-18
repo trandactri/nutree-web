@@ -195,11 +195,6 @@ export function FinalCTA() {
               </div>
               <div className="h-8 w-px bg-white/20" />
               <div className="text-center">
-                <div className="font-display text-3xl font-bold text-white">AI</div>
-                <div className="text-sm">{t.finalCta.stats.aiPowered}</div>
-              </div>
-              <div className="h-8 w-px bg-white/20 hidden sm:block" />
-              <div className="text-center hidden sm:block">
                 <div className="font-display text-3xl font-bold text-white">4.9</div>
                 <div className="text-sm">{t.finalCta.stats.rating}</div>
               </div>
